@@ -11,10 +11,13 @@
   "publisher": "smcpeak",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.37.0"
+    "vscode": "^1.36.0"
   },
   "categories": [
     "Keymaps"
+  ],
+  "keywords": [
+    "keymap"
   ],
   "scripts": {
     "package": "vsce package"
