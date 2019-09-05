@@ -17,7 +17,7 @@ precedence over the defaults provided by VSCode.
 
 Example screenshot running on Linux:
 
-![Screenshot of bindings](doc/bindings-screenshot.png)
+![Screenshot of bindings](bindings-screenshot.png)
 
 Procedure for creating this extension:
 
