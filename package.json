@@ -2,7 +2,11 @@
   "name": "default-keys-windows",
   "displayName": "default-keys-windows",
   "description": "Provide Windows default keybindings on any platform",
-  "repository": "https://github.com/smcpeak/vscode-default-keys-windows",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smcpeak/vscode-default-keys-windows"
+  },
+  "icon": "icon.png",
   "publisher": "smcpeak",
   "version": "0.0.1",
   "engines": {
