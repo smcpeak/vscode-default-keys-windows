@@ -1,0 +1,20 @@
+{
+    "name": "default-keys-windows",
+    "displayName": "default-keys-windows",
+    "description": "Provide default keybindings as on Windows",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.38.0"
+    },
+    "categories": [
+        "Keymaps"
+    ],
+    "contributes": {
+        "keybindings": [
+            {
+                "key": "ctrl+.",
+                "command": "workbench.action.showCommands"
+            }
+        ]
+    }
+}
