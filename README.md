@@ -1,8 +1,9 @@
-This extension provides the default key bindings for Windows.
+This extension provides the default key bindings for Windows
+on any platform.
 
 Currently, these are the defaults for VSCode 1.37.1.
 
-It is useful if you want to run VSCode on another platform
+This is useful if you want to run VSCode on another platform
 but continue to use the bindings that are the defaults on
 Windows (e.g.,
 [here](https://stackoverflow.com/questions/52726849/how-to-transfer-vscode-key-mapping-on-windows-to-ubuntu)
@@ -19,7 +20,15 @@ Example screenshot running on Linux:
 
 ![Screenshot of bindings](bindings-screenshot.png)
 
-Procedure for creating this extension:
+## Installation
+
+Just install it like any other extension from within VSCode.
+The new bindings should be active immediately.
+
+## Unnecessary detail
+
+For the curious or adventurous, the procedure I used to create this
+extension is:
 
 1. Run `yo code` to make a new keybindings extension.
 2. Run command "Preference: Open Default Keyboard Shortcuts (JSON)"
