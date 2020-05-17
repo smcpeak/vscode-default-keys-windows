@@ -799,7 +799,6 @@
       { "key": "alt+8",                 "command": "workbench.action.openEditorAtIndex8" },
       { "key": "alt+9",                 "command": "workbench.action.openEditorAtIndex9" },
       { "key": "ctrl+k ctrl+s",         "command": "workbench.action.openGlobalKeybindings" },
-      { "key": "ctrl+tab",              "command": "workbench.action.openNextRecentlyUsedEditorInGroup" },
       { "key": "ctrl+shift+tab",        "command": "workbench.action.openPreviousRecentlyUsedEditorInGroup" },
       { "key": "ctrl+r",                "command": "workbench.action.openRecent" },
       { "key": "ctrl+,",                "command": "workbench.action.openSettings" },
