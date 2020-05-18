@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.0.5
+
+- Update to match defaults for VSCode 1.45.1.
+- Require VSCode 1.45.1 or later due to changed command names.
+- The update resolves github issue #1, in which ctrl+tab was broken due
+  to changed names.
+
 ## 0.0.4
 
 - Update to match defaults for VSCode 1.41.1.
