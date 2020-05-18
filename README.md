@@ -1,7 +1,7 @@
 This extension provides the default key bindings for Windows
 on any platform.
 
-Currently, these are the defaults for VSCode 1.41.1.
+Currently, these are the defaults for VSCode 1.45.1.
 
 This is useful if you want to run VSCode on another platform
 but continue to use the bindings that are the defaults on
@@ -25,15 +25,20 @@ Example screenshot running on Linux:
 Just install it like any other extension from within VSCode.
 The new bindings should be active immediately.
 
+Or, install it from the
+[Marketplace page](https://marketplace.visualstudio.com/items?itemName=smcpeak.default-keys-windows).
+
 ## Unnecessary detail
 
 For the curious or adventurous, the procedure I used to create this
 extension is:
 
 1. Run `yo code` to make a new keybindings extension.
-2. Run command "Preference: Open Default Keyboard Shortcuts (JSON)"
+2. Disable all non-default extensions (within the workspace) so their
+   entries to not appear in the output from the next command.
+3. Run command "Preference: Open Default Keyboard Shortcuts (JSON)"
    from the command palette.
-3. Copy the output into the `contributes.keybindings` section
+4. Copy the output into the `contributes.keybindings` section
    of `package.json`.
-4. Tidy up `package.json` by adding `publisher`, etc.
-5. Write documentation.
+5. Tidy up `package.json` by adding `publisher`, etc.
+6. Write documentation.
