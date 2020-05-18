@@ -1,0 +1,98 @@
+publishing.txt
+
+These are my personal notes on testing and publishing this extension.
+They are mainly for my personal reference but possibly of use to someone
+else helping out with development activities.
+
+Reference Links
+---------------
+
+Guide to writing and publishing extensions:
+
+  https://code.visualstudio.com/api/working-with-extensions/publishing-extension
+
+
+Packaging
+---------
+
+To package the extension for local testing, make sure the version has
+been bumped in package.json, then in a COMMAND PROMPT window (the
+tools do not work from a cygwin window):
+
+  D:\wrk\vscode\default-keys-windows>set PATH=%PATH%;d:\opt\node-v10.16.3
+
+  D:\wrk\vscode\default-keys-windows>vsce package
+   DONE  Packaged: D:\wrk\vscode\default-keys-windows\default-keys-windows-0.0.5.vsix (14 files, 116.85KB)
+
+Local Testing
+-------------
+
+Copy the VSIX file to the Linux test VM.
+
+On the Linux VM, open the Extensions area via button on left edge, then
+choose "Install from VSIX ..." from the "..." menu.  Choose the VSIX file
+then restart VSCode.
+
+Check that the new bindings appear in the key bindings list and work in
+the editor.  The main one I test with is Ctrl+Shift+Alt+Down, which on
+Windows creates a multi-line column selection.  Without this extension,
+on Linux it would instead duplicate the current line, but with this
+extension, also creates a multi-line column selection.
+
+Publishing
+----------
+
+Make sure version has been bumped in package.json and an entry added to
+CHANGELOG.md.
+
+Log in to https://dev.azure.com/smcpeak/ with MS credentials.
+Go to User Settings (top right), Personal Access Tokens.
+Click New Token.
+Give it a name like "token-2020-05-18".
+Set Organization to "All accessible organizations".
+Ensure scope is "Custom defined".
+Click "Show all scopes".
+Scroll down to "Marketplace" and check "Acquire" and "Manage".
+Click "Create".
+Copy to clipboard, save to a file.
+Close window with the token.
+
+At the COMMAND PROMPT window:
+
+  D:\wrk\vscode\default-keys-windows>vsce publish -p <token>
+
+where <token> is the actual token (paste with Ctrl+V).
+
+Test Installation from Marketplace
+----------------------------------
+
+Check that the new version is visible at
+https://marketplace.visualstudio.com/items?itemName=smcpeak.default-keys-windows
+
+Go to Linux test VM.
+Uninstall the version that was installed from VSIX.
+Restart VSCode.
+In extensions, search for "Windows Default Keybindings".
+Should see new version there.
+Install and test with Ctrl+Shift+Alt+Down.
+
+Publish on Github
+-----------------
+
+Tag and push, e.g.:
+
+  $ git tag v0.0.5
+  $ git push
+  $ git push --tags
+
+Go to Releases:
+https://github.com/smcpeak/vscode-default-keys-windows/releases
+
+Draft new release, name like vscode-default-keys-windows-0.0.5.
+Select tag.
+Copy CHANGELOG.md fragment.
+Attach VSIX file.
+Publish.
+
+
+EOF
