@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.6
+
+- Update to match defaults for, and require, VSCode 1.47.
+
 ## 0.0.5
 
 - Update to match defaults for VSCode 1.45.1.
