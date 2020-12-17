@@ -22,11 +22,16 @@ Example screenshot running on Linux:
 
 ## Installation
 
-Just install it like any other extension from within VSCode.
-The new bindings should be active immediately.
+From within VSCode, go to extensions (Ctrl+Shift+X),
+search for "Windows Default Keybindings", click on it, then
+click on Install.  The new bindings should be active immediately.
 
-Or, install it from the
-[Marketplace page](https://marketplace.visualstudio.com/items?itemName=smcpeak.default-keys-windows).
+Alternatively, install it from the
+[Marketplace page](https://marketplace.visualstudio.com/items?itemName=smcpeak.default-keys-windows),
+or download the VSIX file from the
+[Github releases page](https://github.com/smcpeak/vscode-default-keys-windows/releases)
+and then use "Install from VSIX..." menu option from the "..." menu in
+the Extensions page.
 
 ## Unnecessary detail
 
