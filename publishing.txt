@@ -94,5 +94,20 @@ Copy CHANGELOG.md fragment.
 Attach VSIX file.
 Publish.
 
+Publish on open-vsx
+-------------------
+
+Instructions: https://github.com/eclipse/openvsx/wiki/Publishing-Extensions
+
+Command to publish:
+
+  $ npx ovsx publish default-keys-windows-0.0.5.vsix -p <token>
+
+where <token> is an access token I might have already in a file, otherwise
+need to log in to using Github OAuth at https://open-vsx.org to create a
+token.
+
+URL to check: https://open-vsx.org/extension/smcpeak/default-keys-windows
+
 
 EOF
