@@ -19,7 +19,7 @@ To package the extension for local testing, make sure the version has
 been bumped in package.json, then in a COMMAND PROMPT window (the
 tools do not work from a cygwin window):
 
-  D:\wrk\vscode\default-keys-windows>set PATH=%PATH%;d:\opt\node-v10.16.3
+  D:\wrk\vscode\default-keys-windows>set PATH=%PATH%;d:\opt\node-v14.18.0
 
   D:\wrk\vscode\default-keys-windows>vsce package
    DONE  Packaged: D:\wrk\vscode\default-keys-windows\default-keys-windows-0.0.5.vsix (14 files, 116.85KB)
