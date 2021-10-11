@@ -91,7 +91,7 @@ Tag and push, e.g.:
 
   $ git tag v0.0.5
   $ git push
-  $ git push --tags
+  $ git push origin v0.0.5
 
 Go to Releases:
 https://github.com/smcpeak/vscode-default-keys-windows/releases
