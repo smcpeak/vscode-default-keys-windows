@@ -40,7 +40,7 @@ extension is:
 
 1. Run `yo code` to make a new keybindings extension.
 2. Disable all non-default extensions (within the workspace) so their
-   entries to not appear in the output from the next command.
+   entries do not appear in the output from the next command.
 3. Run command "Preference: Open Default Keyboard Shortcuts (JSON)"
    from the command palette.
 4. Copy the output into the `contributes.keybindings` section
