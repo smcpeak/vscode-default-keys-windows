@@ -21,7 +21,7 @@ tools do not work from a cygwin window):
 
   D:\wrk\vscode\default-keys-windows>set PATH=%PATH%;d:\opt\node-v14.18.0
 
-  D:\wrk\vscode\default-keys-windows>vsce package
+  D:\wrk\vscode\default-keys-windows>node %APPDATA%\npm\node_modules\vsce\out\vsce package
    DONE  Packaged: D:\wrk\vscode\default-keys-windows\default-keys-windows-0.0.5.vsix (14 files, 116.85KB)
 
 Local Testing
