@@ -39,6 +39,14 @@ Windows creates a multi-line column selection.  Without this extension,
 on Linux it would instead duplicate the current line, but with this
 extension, also creates a multi-line column selection.
 
+Beware: Some Linux desktop environments eat these key combinations!
+I recently upgraded to Mint 20.1 and found I needed to run:
+
+  $ gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-down "['']"
+  $ gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-up "['']"
+
+in order to allow VSCode to see these combinations.
+
 Publishing
 ----------
 
