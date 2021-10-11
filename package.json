@@ -9,9 +9,9 @@
   "icon": "icon.png",
   "license": "MIT",
   "publisher": "smcpeak",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "engines": {
-    "vscode": "^1.52.1"
+    "vscode": "^1.61.0"
   },
   "categories": [
     "Keymaps"
