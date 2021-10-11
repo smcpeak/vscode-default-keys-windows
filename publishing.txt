@@ -67,7 +67,7 @@ Close window with the token.
 
 At the COMMAND PROMPT window:
 
-  D:\wrk\vscode\default-keys-windows>vsce publish -p <token>
+  D:\wrk\vscode\default-keys-windows>node %APPDATA%\npm\node_modules\vsce\out\vsce publish -p <token>
 
 where <token> is the actual token (paste with Ctrl+V).
 
