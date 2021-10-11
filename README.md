@@ -33,7 +33,7 @@ or download the VSIX file from the
 and then use "Install from VSIX..." menu option from the "..." menu in
 the Extensions page.
 
-## Unnecessary detail
+## How it was created
 
 For the curious or adventurous, the procedure I used to create this
 extension is:
