@@ -50,8 +50,8 @@ in order to allow VSCode to see these combinations.
 Publishing
 ----------
 
-Make sure version has been bumped in package.json and an entry added to
-CHANGELOG.md.
+Make sure version has been bumped in package.json and README.md and an
+entry added to CHANGELOG.md.
 
 Log in to https://dev.azure.com/smcpeak/ with MS credentials.
 Go to User Settings (top right), Personal Access Tokens.
