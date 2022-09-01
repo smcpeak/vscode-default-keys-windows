@@ -19,9 +19,9 @@ To package the extension for local testing, make sure the version has
 been bumped in package.json, then in a COMMAND PROMPT window (the
 tools do not work from a cygwin window):
 
-  D:\wrk\vscode\default-keys-windows>set PATH=%PATH%;d:\opt\node-v10.16.3
+  D:\wrk\vscode\default-keys-windows>set PATH=%PATH%;d:\opt\node-v14.18.0
 
-  D:\wrk\vscode\default-keys-windows>vsce package
+  D:\wrk\vscode\default-keys-windows>node %APPDATA%\npm\node_modules\vsce\out\vsce package
    DONE  Packaged: D:\wrk\vscode\default-keys-windows\default-keys-windows-0.0.5.vsix (14 files, 116.85KB)
 
 Local Testing
@@ -39,11 +39,19 @@ Windows creates a multi-line column selection.  Without this extension,
 on Linux it would instead duplicate the current line, but with this
 extension, also creates a multi-line column selection.
 
+Beware: Some Linux desktop environments eat these key combinations!
+I recently upgraded to Mint 20.1 and found I needed to run:
+
+  $ gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-down "['']"
+  $ gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-up "['']"
+
+in order to allow VSCode to see these combinations.
+
 Publishing
 ----------
 
-Make sure version has been bumped in package.json and an entry added to
-CHANGELOG.md.
+Make sure version has been bumped in package.json and README.md and an
+entry added to CHANGELOG.md.
 
 Log in to https://dev.azure.com/smcpeak/ with MS credentials.
 Go to User Settings (top right), Personal Access Tokens.
@@ -59,7 +67,7 @@ Close window with the token.
 
 At the COMMAND PROMPT window:
 
-  D:\wrk\vscode\default-keys-windows>vsce publish -p <token>
+  D:\wrk\vscode\default-keys-windows>node %APPDATA%\npm\node_modules\vsce\out\vsce publish -p <token>
 
 where <token> is the actual token (paste with Ctrl+V).
 
@@ -83,7 +91,7 @@ Tag and push, e.g.:
 
   $ git tag v0.0.5
   $ git push
-  $ git push --tags
+  $ git push origin v0.0.5
 
 Go to Releases:
 https://github.com/smcpeak/vscode-default-keys-windows/releases
@@ -92,6 +100,8 @@ Draft new release, name like vscode-default-keys-windows-0.0.5.
 Select tag.
 Copy CHANGELOG.md fragment.
 Attach VSIX file.
+  2022-08-31: Github now refuses to allow VSIX files to be attached,
+  so rename it to ZIP first.
 Publish.
 
 Publish on open-vsx
@@ -99,9 +109,9 @@ Publish on open-vsx
 
 Instructions: https://github.com/eclipse/openvsx/wiki/Publishing-Extensions
 
-Command to publish:
+Command to publish; run at command prompt:
 
-  $ npx ovsx publish default-keys-windows-0.0.5.vsix -p <token>
+  > npx ovsx publish default-keys-windows-0.0.5.vsix -p <token>
 
 where <token> is an access token I might have already in a file, otherwise
 need to log in to using Github OAuth at https://open-vsx.org to create a

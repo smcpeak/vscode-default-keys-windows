@@ -1,7 +1,7 @@
 This extension provides the default key bindings for Windows
 on any platform.
 
-Currently, these are the defaults for VSCode 1.52.1.
+Currently, these are the defaults for VSCode 1.70.2.
 
 This is useful if you want to run VSCode on another platform
 but continue to use the bindings that are the defaults on
@@ -33,14 +33,14 @@ or download the VSIX file from the
 and then use "Install from VSIX..." menu option from the "..." menu in
 the Extensions page.
 
-## Unnecessary detail
+## How it was created
 
 For the curious or adventurous, the procedure I used to create this
 extension is:
 
 1. Run `yo code` to make a new keybindings extension.
 2. Disable all non-default extensions (within the workspace) so their
-   entries to not appear in the output from the next command.
+   entries do not appear in the output from the next command.
 3. Run command "Preference: Open Default Keyboard Shortcuts (JSON)"
    from the command palette.
 4. Copy the output into the `contributes.keybindings` section
