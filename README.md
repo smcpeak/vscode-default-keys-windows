@@ -47,3 +47,16 @@ extension is:
    of `package.json`.
 5. Tidy up `package.json` by adding `publisher`, etc.
 6. Write documentation.
+
+## Ubuntu 22
+
+For the shortcuts of add cursor down (Ctrl - Alt - Down Arrow) and add cursor up
+(Ctrl - Alt - Up Arrow) you need to disable Ubuntu default bindings, you can do
+that by running the following commands in your terminal:
+
+```
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "['']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "['']"
+```
