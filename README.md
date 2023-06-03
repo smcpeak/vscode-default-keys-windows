@@ -33,6 +33,62 @@ or download the VSIX file from the
 and then use "Install from VSIX..." menu option from the "..." menu in
 the Extensions page.
 
+## Some problematic keybindings and workarounds
+
+The basic goal of this extension is to allow VSCode users who are accustomed to the keybindings on Windows to use it on other platforms with the same keybindings.  However, sometimes the bindings conflict with something else on the other OS, or don't work for some other reason.
+
+In this section I have collected together some workarounds, but be aware that I haven't personally tested all of them.
+
+### Ctrl + Alt + Up/Down/Right
+
+On Windows, Ctrl+Alt+Up and Ctrl+Alt+Down enter multi-column select mode, and
+Ctrl+Alt+Right splits the editor pane vertically.  On some Linux distributions,
+the window manager by default intercepts these key combinations.
+
+On Ubuntu 22, to disable the offending window manager bindings and allow VSCode
+to see them, run at a shell:
+
+```
+$ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['']"
+$ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['']"
+$ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "['']"
+$ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "['']"
+```
+
+On Mint 20, run:
+
+```
+$ gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-left "['']"
+$ gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-right "['']"
+$ gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-down "['']"
+$ gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-up "['']"
+```
+
+### Ctrl + Left/Right on MacOS
+
+On Windows, Ctrl + Left/Right moves the cursor by one word to the left or right,
+including in the Terminal window.  However, reportedly on MacOS, these key bindings
+do not work in the Terminal.  Add the following snippet to `keybindings.json`
+(Ctrl+Shift+P to get the Command Palette, then "Open Keyboard Shortcuts (JSON)")
+to add bindings that work in Terminal on MacOS:
+
+```
+[
+  {
+    "key":     "ctrl+left",
+    "command": "workbench.action.terminal.sendSequence",
+    "args":    { "text": "\u001bb" },
+    "when":    "terminalFocus"
+  },
+  {
+    "key":     "ctrl+right",
+    "command": "workbench.action.terminal.sendSequence",
+    "args":    { "text": "\u001bf" },
+    "when":    "terminalFocus"
+  },
+]
+```
+
 ## How it was created
 
 For the curious or adventurous, the procedure I used to create this
