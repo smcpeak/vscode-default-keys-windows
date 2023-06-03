@@ -1,7 +1,7 @@
 This extension provides the default key bindings for Windows
 on any platform.
 
-Currently, these are the defaults for VSCode 1.70.2.
+Currently, these are the defaults for VSCode 1.78.2.
 
 This is useful if you want to run VSCode on another platform
 but continue to use the bindings that are the defaults on
@@ -68,7 +68,7 @@ $ gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-up "['']"
 
 On Windows, Ctrl + Left/Right moves the cursor by one word to the left or right,
 including in the Terminal window.  However, reportedly on MacOS, these key bindings
-do not work in the Terminal.  Add the following snippet to `keybindings.json`
+do not work in the Terminal.  Insert the following snippet into `keybindings.json`
 (Ctrl+Shift+P to get the Command Palette, then "Open Keyboard Shortcuts (JSON)")
 to add bindings that work in Terminal on MacOS:
 
