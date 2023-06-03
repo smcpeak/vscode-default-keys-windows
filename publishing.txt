@@ -19,9 +19,11 @@ To package the extension for local testing, make sure the version has
 been bumped in package.json, then in a COMMAND PROMPT window (the
 tools do not work from a cygwin window):
 
-  D:\wrk\vscode\default-keys-windows>set PATH=%PATH%;d:\opt\node-v14.18.0
+  D:\wrk\vscode\default-keys-windows>set PATH=%PATH%;d:\opt\node-v18.16.0
 
-  D:\wrk\vscode\default-keys-windows>node %APPDATA%\npm\node_modules\vsce\out\vsce package
+  D:\wrk\vscode\default-keys-windows>npm install -g vsce
+
+  D:\wrk\vscode\default-keys-windows>vsce package
    DONE  Packaged: D:\wrk\vscode\default-keys-windows\default-keys-windows-0.0.5.vsix (14 files, 116.85KB)
 
 Local Testing
@@ -40,12 +42,7 @@ on Linux it would instead duplicate the current line, but with this
 extension, also creates a multi-line column selection.
 
 Beware: Some Linux desktop environments eat these key combinations!
-I recently upgraded to Mint 20.1 and found I needed to run:
-
-  $ gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-down "['']"
-  $ gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-up "['']"
-
-in order to allow VSCode to see these combinations.
+See README.md for workarounds.
 
 Publishing
 ----------
@@ -67,7 +64,7 @@ Close window with the token.
 
 At the COMMAND PROMPT window:
 
-  D:\wrk\vscode\default-keys-windows>node %APPDATA%\npm\node_modules\vsce\out\vsce publish -p <token>
+  D:\wrk\vscode\default-keys-windows>vsce publish -p <token>
 
 where <token> is the actual token (paste with Ctrl+V).
 
