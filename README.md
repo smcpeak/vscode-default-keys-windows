@@ -89,6 +89,39 @@ to add bindings that work in Terminal on MacOS:
 ]
 ```
 
+### Home and End in Terminal on MacOS
+
+On Windows, the Home and End keys move to the start and end of line in a
+Terminal window.  This behavior isn't due to a normal VSCode binding (it
+probably comes from the underlying GUI library), so this extension
+doesn't replicate that behavior (since it just copies all normal
+bindings), and consequently those keys do nothing in the VSCode Terminal
+window on Mac.  In order to bind those keys, you can add to your
+`keybindings.json` file:
+
+```
+[
+  {
+    "key":     "home",
+    "command": "workbench.action.terminal.sendSequence",
+    "args":    { "text": "\u0001" },
+    "when":    "terminalFocus"
+  },
+  {
+    "key":     "end",
+    "command": "workbench.action.terminal.sendSequence",
+    "args":    { "text": "\u0005" },
+    "when":    "terminalFocus"
+  }
+]
+```
+
+The above assumes you are using `zsh`, the default shell.  If you are
+using another shell (such as `bash`), the text to send may need
+adjustment.  See
+[Can home and end keys be mapped when using Terminal?](https://apple.stackexchange.com/questions/12997/can-home-and-end-keys-be-mapped-when-using-terminal)
+for more information.
+
 ## How it was created
 
 For the curious or adventurous, the procedure I used to create this
