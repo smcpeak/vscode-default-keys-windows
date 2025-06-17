@@ -71,8 +71,13 @@ where <token> is the actual token (paste with Ctrl+V).
 Test Installation from Marketplace
 ----------------------------------
 
-Check that the new version is visible at
-https://marketplace.visualstudio.com/items?itemName=smcpeak.default-keys-windows
+Check that the new version is visible at:
+
+  https://marketplace.visualstudio.com/items?itemName=smcpeak.default-keys-windows
+
+It typically takes about 5 minutes to appear there with the new version
+number and other details, so wait for that to happen before proceeding
+(keep refreshing...).
 
 Go to Linux test VM.
 Uninstall the version that was installed from VSIX.
