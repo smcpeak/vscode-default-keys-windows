@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.0.11
+
+- Update to match defaults for, and require, VSCode 1.101.
+- This may resolve github issue #11.
+
 ## 0.0.10
 
 - Update to match defaults for, and require, VSCode 1.78.

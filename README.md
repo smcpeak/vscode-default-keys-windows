@@ -1,7 +1,7 @@
 This extension provides the default key bindings for Windows
 on any platform.
 
-Currently, these are the defaults for VSCode 1.78.2.
+Currently, these are the defaults for VSCode 1.101.0.
 
 This is useful if you want to run VSCode on another platform
 but continue to use the bindings that are the defaults on
