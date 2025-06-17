@@ -102,8 +102,6 @@ Draft new release, name like vscode-default-keys-windows-0.0.5.
 Select tag.
 Copy CHANGELOG.md fragment.
 Attach VSIX file.
-  2022-08-31: Github now refuses to allow VSIX files to be attached,
-  so rename it to ZIP first.
 Publish.
 
 Publish on open-vsx
