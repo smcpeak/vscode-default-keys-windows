@@ -136,3 +136,19 @@ extension is:
    of `package.json`.
 5. Tidy up `package.json` by adding `publisher`, etc.
 6. Write documentation.
+
+## Interesting in helping maintain this?
+
+I created this extension as a proof of concept answer for a
+[Stack Overflow question](https://stackoverflow.com/questions/52726849/how-to-transfer-vscode-key-mapping-on-windows-to-ubuntu).
+Unexpectedly, it came to be relied upon by a large number of users
+(over 50k downloads).
+
+The extension requires periodic updates to track the default VSCode
+Windows key bindings, and I'm looking for volunteers to help with that.
+If you're interested, a good first step would be to submit a pull
+request that updates the bindings to the current version of VSCode.
+Look at the revision history for examples of past updates, and read
+`publshing.txt` to see how to test the changes.  For now, I'd still take
+care of actually publishing, but with the intention to eventually
+delegate that too.
