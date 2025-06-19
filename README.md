@@ -137,7 +137,24 @@ extension is:
 5. Tidy up `package.json` by adding `publisher`, etc.
 6. Write documentation.
 
-## Interesting in helping maintain this?
+### Removing identical bindings
+
+The above was how the extension was originally created.  However, as
+shown in
+[Issue #11](https://github.com/smcpeak/vscode-default-keys-windows/issues/11),
+there is a problem when some other extension wants to override a key
+that has a default binding, since there is no way to specify a priority
+order for extension keybindings.  This extension may inadvertently block
+the other extension's binding from working due to effectively
+re-inserting the default binding.
+
+Although not a complete solution, I've chosen to write a script to
+compare the bindings on Windows, Linux, and MacOS, and then have this
+extension not bind any keys whose default bindings are identical on all
+three platforms.  Consequently, "tab" is not bound by this extension
+anymore.  See the `compute-bindings.py` script for details.
+
+## Interested in helping to maintain this?
 
 I created this extension as a proof of concept answer for a
 [Stack Overflow question](https://stackoverflow.com/questions/52726849/how-to-transfer-vscode-key-mapping-on-windows-to-ubuntu).

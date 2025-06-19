@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.0
+
+- Remove key bindings that are identical on Windows, Linux, and MacOS.  In particular, this removes "tab", which should solve Issue #11.
+
 ## 0.0.11
 
 - Update to match defaults for, and require, VSCode 1.101.

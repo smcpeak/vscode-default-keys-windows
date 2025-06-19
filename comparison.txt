@@ -1,0 +1,4459 @@
+Windows has 387 bound keys.
+Linux has 384 bound keys.
+MacOS has 447 bound keys.
+Key 'alt+0' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "alt+0",
+      "command": "workbench.action.lastEditorInGroup"
+    }
+  ]
+Key 'alt+1' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "alt+1",
+      "command": "workbench.action.openEditorAtIndex1"
+    }
+  ]
+Key 'alt+2' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "alt+2",
+      "command": "workbench.action.openEditorAtIndex2"
+    }
+  ]
+Key 'alt+3' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "alt+3",
+      "command": "workbench.action.openEditorAtIndex3"
+    }
+  ]
+Key 'alt+4' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "alt+4",
+      "command": "workbench.action.openEditorAtIndex4"
+    }
+  ]
+Key 'alt+5' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "alt+5",
+      "command": "workbench.action.openEditorAtIndex5"
+    }
+  ]
+Key 'alt+6' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "alt+6",
+      "command": "workbench.action.openEditorAtIndex6"
+    }
+  ]
+Key 'alt+7' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "alt+7",
+      "command": "workbench.action.openEditorAtIndex7"
+    }
+  ]
+Key 'alt+8' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "alt+8",
+      "command": "workbench.action.openEditorAtIndex8"
+    }
+  ]
+Key 'alt+9' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "alt+9",
+      "command": "workbench.action.openEditorAtIndex9"
+    }
+  ]
+Key 'alt+`' is not bound on Linux; on Windows, it is:
+  [
+    {
+      "key": "alt+`",
+      "command": "workbench.action.editorDictation.start",
+      "when": "hasSpeechProvider && !editorReadonly && !speechToTextInProgress"
+    }
+  ]
+Key 'alt+backspace' is not bound on Linux; on Windows, it is:
+  [
+    {
+      "key": "alt+backspace",
+      "command": "workbench.action.chat.cancel"
+    }
+  ]
+Key 'alt+c' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "alt+c",
+      "command": "toggleFindCaseSensitive",
+      "when": "editorFocus"
+    },
+    {
+      "key": "alt+c",
+      "command": "toggleSearchCaseSensitive",
+      "when": "searchViewletFocus"
+    },
+    {
+      "key": "alt+c",
+      "command": "toggleSearchEditorCaseSensitive",
+      "when": "inSearchEditor && searchInputBoxFocus"
+    },
+    {
+      "key": "alt+c",
+      "command": "workbench.action.terminal.toggleFindCaseSensitive",
+      "when": "terminalFindVisible && terminalHasBeenCreated || terminalFindVisible && terminalProcessSupported"
+    }
+  ]
+Bindings for 'alt+delete' differ between Windows and MacOS:
+@@ -1,7 +1,20 @@
+
+ [
++  {
++    "key": "alt+delete",
++    "command": "deleteWordRight",
++    "when": "textInputFocus && !editorReadonly"
++  },
+   {
+     "key": "alt+delete",
+     "command": "notebook.cell.clearOutputs",
+     "when": "notebookCellEditable && notebookCellHasOutputs && notebookEditable && notebookEditorFocused && !inputFocus"
++  },
++  {
++    "key": "alt+delete",
++    "command": "workbench.action.terminal.sendSequence",
++    "when": "terminalFocus",
++    "args": {
++      "text": "\u001bd"
++    }
+   }
+ ]
+Bindings for 'alt+down' differ between Windows and MacOS:
+@@ -31,18 +31,8 @@
+
+   },
+   {
+     "key": "alt+down",
+-    "command": "quickInput.nextSeparatorWithQuickAccessFallback",
+-    "when": "inQuickInput && quickInputType == 'quickPick'"
+-  },
+-  {
+-    "key": "alt+down",
+     "command": "scm.forceViewNextCommit",
+     "when": "scmRepository"
+-  },
+-  {
+-    "key": "alt+down",
+-    "command": "workbench.action.terminal.focusNextPane",
+-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+   },
+   {
+     "key": "alt+down",
+Bindings for 'alt+enter' differ between Windows and MacOS:
+@@ -21,11 +21,6 @@
+
+   },
+   {
+     "key": "alt+enter",
+-    "command": "search.action.openInEditor",
+-    "when": "hasSearchResult && searchViewletFocus"
+-  },
+-  {
+-    "key": "alt+enter",
+     "command": "workbench.action.terminal.chat.insertCommand",
+     "when": "chatIsEnabled && terminalChatResponseContainsCodeBlock && terminalHasBeenCreated && !terminalChatActiveRequest && !terminalChatResponseContainsMultipleCodeBlocks || chatIsEnabled && terminalChatResponseContainsCodeBlock && terminalProcessSupported && !terminalChatActiveRequest && !terminalChatResponseContainsMultipleCodeBlocks"
+   },
+Key 'alt+f12' is not bound on Linux; on Windows, it is:
+  [
+    {
+      "key": "alt+f12",
+      "command": "editor.action.peekDefinition",
+      "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    }
+  ]
+Bindings for 'alt+f2' differ between Windows and Linux:
+@@ -2,10 +2,5 @@
+
+   {
+     "key": "alt+f2",
+     "command": "editor.action.accessibleView"
+-  },
+-  {
+-    "key": "alt+f2",
+-    "command": "workbench.action.terminal.focusAccessibleBuffer",
+-    "when": "accessibilityModeEnabled && terminalFocus && terminalHasBeenCreated || accessibilityModeEnabled && terminalFocus && terminalProcessSupported"
+   }
+ ]
+Key 'alt+f4' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "alt+f4",
+      "command": "workbench.action.closeWindow"
+    }
+  ]
+Bindings for 'alt+k' differ between Windows and MacOS:
+@@ -3,10 +3,5 @@
+
+     "key": "alt+k",
+     "command": "editor.action.accessibilityHelpConfigureKeybindings",
+     "when": "accessibilityHelpIsShown && accessibleViewHasUnassignedKeybindings"
+-  },
+-  {
+-    "key": "alt+k",
+-    "command": "keybindings.editor.recordSearchKeys",
+-    "when": "inKeybindings && inKeybindingsSearch"
+   }
+ ]
+Key 'alt+l' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "alt+l",
+      "command": "toggleFindInSelection",
+      "when": "editorFocus"
+    },
+    {
+      "key": "alt+l",
+      "command": "toggleSearchEditorContextLines",
+      "when": "inSearchEditor"
+    }
+  ]
+Bindings for 'alt+left' differ between Windows and Linux:
+@@ -1,17 +1,7 @@
+
+ [
+-  {
+-    "key": "alt+left",
+-    "command": "workbench.action.navigateBack",
+-    "when": "canNavigateBack"
+-  },
+   {
+     "key": "alt+left",
+     "command": "workbench.action.terminal.focusPreviousPane",
+     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+-  },
+-  {
+-    "key": "alt+left",
+-    "command": "workbench.action.quickInputBack",
+-    "when": "inQuickOpen"
+   }
+ ]
+Key 'alt+p' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "alt+p",
+      "command": "togglePreserveCase",
+      "when": "editorFocus"
+    },
+    {
+      "key": "alt+p",
+      "command": "keybindings.editor.toggleSortByPrecedence",
+      "when": "inKeybindings"
+    },
+    {
+      "key": "alt+p",
+      "command": "toggleSearchPreserveCase",
+      "when": "searchViewletFocus"
+    }
+  ]
+Bindings for 'alt+pagedown' differ between Windows and MacOS:
+@@ -1,9 +1,4 @@
+
+ [
+-  {
+-    "key": "alt+pagedown",
+-    "command": "scrollPageDown",
+-    "when": "textInputFocus"
+-  },
+   {
+     "key": "alt+pagedown",
+     "command": "quickInput.pageNext",
+Bindings for 'alt+pageup' differ between Windows and MacOS:
+@@ -1,9 +1,4 @@
+
+ [
+-  {
+-    "key": "alt+pageup",
+-    "command": "scrollPageUp",
+-    "when": "textInputFocus"
+-  },
+   {
+     "key": "alt+pageup",
+     "command": "quickInput.pagePrevious",
+Key 'alt+r' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "alt+r",
+      "command": "toggleFindRegex",
+      "when": "editorFocus"
+    },
+    {
+      "key": "alt+r",
+      "command": "toggleSearchEditorRegex",
+      "when": "inSearchEditor && searchInputBoxFocus"
+    },
+    {
+      "key": "alt+r",
+      "command": "toggleSearchRegex",
+      "when": "searchViewletFocus"
+    },
+    {
+      "key": "alt+r",
+      "command": "workbench.action.terminal.toggleFindRegex",
+      "when": "terminalFindVisible && terminalHasBeenCreated || terminalFindVisible && terminalProcessSupported"
+    }
+  ]
+Bindings for 'alt+right' differ between Windows and Linux:
+@@ -1,9 +1,4 @@
+
+ [
+-  {
+-    "key": "alt+right",
+-    "command": "workbench.action.navigateForward",
+-    "when": "canNavigateForward"
+-  },
+   {
+     "key": "alt+right",
+     "command": "workbench.action.terminal.focusNextPane",
+Bindings for 'alt+up' differ between Windows and MacOS:
+@@ -31,18 +31,8 @@
+
+   },
+   {
+     "key": "alt+up",
+-    "command": "quickInput.previousSeparatorWithQuickAccessFallback",
+-    "when": "inQuickInput && quickInputType == 'quickPick'"
+-  },
+-  {
+-    "key": "alt+up",
+     "command": "scm.forceViewPreviousCommit",
+     "when": "scmRepository"
+-  },
+-  {
+-    "key": "alt+up",
+-    "command": "workbench.action.terminal.focusPreviousPane",
+-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+   },
+   {
+     "key": "alt+up",
+Key 'alt+w' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "alt+w",
+      "command": "toggleFindWholeWord",
+      "when": "editorFocus"
+    },
+    {
+      "key": "alt+w",
+      "command": "toggleSearchEditorWholeWord",
+      "when": "inSearchEditor && searchInputBoxFocus"
+    },
+    {
+      "key": "alt+w",
+      "command": "toggleSearchWholeWord",
+      "when": "searchViewletFocus"
+    },
+    {
+      "key": "alt+w",
+      "command": "workbench.action.terminal.toggleFindWholeWord",
+      "when": "terminalFindVisible && terminalHasBeenCreated || terminalFindVisible && terminalProcessSupported"
+    }
+  ]
+Key 'alt+win+/' is not bound on Linux; on Windows, it is:
+  [
+    {
+      "key": "alt+win+/",
+      "command": "workbench.action.chat.run.prompt",
+      "when": "chatIsEnabled && config.chat.promptFiles"
+    },
+    {
+      "key": "alt+win+/",
+      "command": "workbench.action.chat.run.prompt.current",
+      "when": "chatIsEnabled && config.chat.promptFiles && editorTextFocus && resourceSet && resourceLangId == 'prompt'"
+    }
+  ]
+Key 'alt+win+j' is not bound on Linux; on Windows, it is:
+  [
+    {
+      "key": "alt+win+j",
+      "command": "notebook.cell.joinBelow",
+      "when": "notebookEditorFocused"
+    }
+  ]
+Key 'ctrl+,' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+,",
+      "command": "workbench.action.openSettings"
+    }
+  ]
+Bindings for 'ctrl+-' differ between Windows and MacOS:
+@@ -1,6 +1,12 @@
+
+ [
+   {
+     "key": "ctrl+-",
+-    "command": "workbench.action.zoomOut"
++    "command": "workbench.action.navigateBack",
++    "when": "canNavigateBack"
++  },
++  {
++    "key": "ctrl+-",
++    "command": "workbench.action.quickInputBack",
++    "when": "inQuickOpen"
+   }
+ ]
+Key 'ctrl+.' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+.",
+      "command": "editor.action.quickFix",
+      "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+    },
+    {
+      "key": "ctrl+.",
+      "command": "editor.changeDropType",
+      "when": "dropWidgetVisible"
+    },
+    {
+      "key": "ctrl+.",
+      "command": "editor.changePasteType",
+      "when": "pasteWidgetVisible"
+    },
+    {
+      "key": "ctrl+.",
+      "command": "workbench.action.chat.toggleAgentMode",
+      "when": "chatIsEnabled && inChatInput && !chatSessionRequestInProgress && chatLocation == 'panel'"
+    },
+    {
+      "key": "ctrl+.",
+      "command": "notebook.cell.openFailureActions",
+      "when": "notebookCellFocused && notebookCellHasErrorDiagnostics && !notebookCellEditorFocused"
+    },
+    {
+      "key": "ctrl+.",
+      "command": "problems.action.showQuickFixes",
+      "when": "problemFocus"
+    },
+    {
+      "key": "ctrl+.",
+      "command": "workbench.action.terminal.showQuickFixes",
+      "when": "terminalFocus"
+    },
+    {
+      "key": "ctrl+.",
+      "command": "acceptSelectedCodeAction",
+      "when": "codeActionMenuVisible"
+    }
+  ]
+Bindings for 'ctrl+/' differ between Windows and MacOS:
+@@ -1,28 +1,8 @@
+
+ [
+-  {
+-    "key": "ctrl+/",
+-    "command": "editor.action.commentLine",
+-    "when": "editorTextFocus && !editorReadonly"
+-  },
+-  {
+-    "key": "ctrl+/",
+-    "command": "toggleExplainMode",
+-    "when": "suggestWidgetVisible"
+-  },
+-  {
+-    "key": "ctrl+/",
+-    "command": "workbench.action.chat.attachContext",
+-    "when": "inChatInput && chatLocation == 'panel'"
+-  },
+   {
+     "key": "ctrl+/",
+     "command": "editor.action.accessibleViewAcceptInlineCompletion",
+     "when": "accessibleViewIsShown && accessibleViewCurrentProviderId == 'inlineCompletions'"
+-  },
+-  {
+-    "key": "ctrl+/",
+-    "command": "notebook.commentSelectedCells",
+-    "when": "notebookEditable && notebookEditorFocused && !inputFocus"
+   },
+   {
+     "key": "ctrl+/",
+@@ -31,10 +11,5 @@
+
+     "args": {
+       "text": "\u001f"
+     }
+-  },
+-  {
+-    "key": "ctrl+/",
+-    "command": "terminalSuggestToggleExplainMode",
+-    "when": "terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible || terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible"
+   }
+ ]
+Bindings for 'ctrl+0' differ between Windows and MacOS:
+@@ -1,6 +1,6 @@
+
+ [
+   {
+     "key": "ctrl+0",
+-    "command": "workbench.action.focusSideBar"
++    "command": "workbench.action.lastEditorInGroup"
+   }
+ ]
+Bindings for 'ctrl+1' differ between Windows and MacOS:
+@@ -1,6 +1,6 @@
+
+ [
+   {
+     "key": "ctrl+1",
+-    "command": "workbench.action.focusFirstEditorGroup"
++    "command": "workbench.action.openEditorAtIndex1"
+   }
+ ]
+Bindings for 'ctrl+2' differ between Windows and MacOS:
+@@ -1,6 +1,6 @@
+
+ [
+   {
+     "key": "ctrl+2",
+-    "command": "workbench.action.focusSecondEditorGroup"
++    "command": "workbench.action.openEditorAtIndex2"
+   }
+ ]
+Bindings for 'ctrl+3' differ between Windows and MacOS:
+@@ -1,6 +1,6 @@
+
+ [
+   {
+     "key": "ctrl+3",
+-    "command": "workbench.action.focusThirdEditorGroup"
++    "command": "workbench.action.openEditorAtIndex3"
+   }
+ ]
+Bindings for 'ctrl+4' differ between Windows and MacOS:
+@@ -1,6 +1,6 @@
+
+ [
+   {
+     "key": "ctrl+4",
+-    "command": "workbench.action.focusFourthEditorGroup"
++    "command": "workbench.action.openEditorAtIndex4"
+   }
+ ]
+Bindings for 'ctrl+5' differ between Windows and MacOS:
+@@ -1,6 +1,6 @@
+
+ [
+   {
+     "key": "ctrl+5",
+-    "command": "workbench.action.focusFifthEditorGroup"
++    "command": "workbench.action.openEditorAtIndex5"
+   }
+ ]
+Bindings for 'ctrl+6' differ between Windows and MacOS:
+@@ -1,6 +1,6 @@
+
+ [
+   {
+     "key": "ctrl+6",
+-    "command": "workbench.action.focusSixthEditorGroup"
++    "command": "workbench.action.openEditorAtIndex6"
+   }
+ ]
+Bindings for 'ctrl+7' differ between Windows and MacOS:
+@@ -1,6 +1,6 @@
+
+ [
+   {
+     "key": "ctrl+7",
+-    "command": "workbench.action.focusSeventhEditorGroup"
++    "command": "workbench.action.openEditorAtIndex7"
+   }
+ ]
+Bindings for 'ctrl+8' differ between Windows and MacOS:
+@@ -1,6 +1,6 @@
+
+ [
+   {
+     "key": "ctrl+8",
+-    "command": "workbench.action.focusEighthEditorGroup"
++    "command": "workbench.action.openEditorAtIndex8"
+   }
+ ]
+Bindings for 'ctrl+9' differ between Windows and MacOS:
+@@ -1,6 +1,6 @@
+
+ [
+   {
+     "key": "ctrl+9",
+-    "command": "workbench.action.lastEditorInGroup"
++    "command": "workbench.action.openEditorAtIndex9"
+   }
+ ]
+Key 'ctrl+; a' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+; a",
+      "command": "testing.runAll"
+    }
+  ]
+Key 'ctrl+; c' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+; c",
+      "command": "testing.runAtCursor",
+      "when": "editorTextFocus"
+    }
+  ]
+Key 'ctrl+; ctrl+a' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+; ctrl+a",
+      "command": "testing.debugAll"
+    }
+  ]
+Key 'ctrl+; ctrl+c' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+; ctrl+c",
+      "command": "testing.debugAtCursor",
+      "when": "editorTextFocus"
+    }
+  ]
+Key 'ctrl+; ctrl+e' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+; ctrl+e",
+      "command": "testing.debugFailTests"
+    }
+  ]
+Key 'ctrl+; ctrl+f' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+; ctrl+f",
+      "command": "testing.debugCurrentFile",
+      "when": "editorTextFocus"
+    }
+  ]
+Key 'ctrl+; ctrl+i' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+; ctrl+i",
+      "command": "testing.toggleInlineTestOutput"
+    }
+  ]
+Key 'ctrl+; ctrl+l' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+; ctrl+l",
+      "command": "testing.debugLastRun"
+    }
+  ]
+Key 'ctrl+; ctrl+m' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+; ctrl+m",
+      "command": "testing.openOutputPeek"
+    }
+  ]
+Key 'ctrl+; ctrl+o' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+; ctrl+o",
+      "command": "testing.showMostRecentOutput",
+      "when": "testing.hasAnyResults"
+    }
+  ]
+Key 'ctrl+; ctrl+r' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+; ctrl+r",
+      "command": "testing.refreshTests",
+      "when": "testing.canRefresh"
+    }
+  ]
+Key 'ctrl+; ctrl+shift+a' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+; ctrl+shift+a",
+      "command": "testing.coverageAll"
+    }
+  ]
+Key 'ctrl+; ctrl+shift+c' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+; ctrl+shift+c",
+      "command": "testing.coverageAtCursor",
+      "when": "editorTextFocus"
+    }
+  ]
+Key 'ctrl+; ctrl+shift+f' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+; ctrl+shift+f",
+      "command": "testing.coverageCurrentFile",
+      "when": "editorTextFocus"
+    }
+  ]
+Key 'ctrl+; ctrl+shift+i' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+; ctrl+shift+i",
+      "command": "testing.toggleInlineCoverage"
+    }
+  ]
+Key 'ctrl+; ctrl+shift+l' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+; ctrl+shift+l",
+      "command": "testing.coverageLastRun"
+    }
+  ]
+Key 'ctrl+; ctrl+x' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+; ctrl+x",
+      "command": "testing.cancelRun"
+    }
+  ]
+Key 'ctrl+; e' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+; e",
+      "command": "testing.reRunFailTests"
+    }
+  ]
+Key 'ctrl+; f' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+; f",
+      "command": "testing.runCurrentFile",
+      "when": "editorTextFocus"
+    }
+  ]
+Key 'ctrl+; l' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+; l",
+      "command": "testing.reRunLastRun"
+    }
+  ]
+Key 'ctrl+=' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+=",
+      "command": "workbench.action.zoomIn"
+    }
+  ]
+Key 'ctrl+[' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+[",
+      "command": "editor.action.outdentLines",
+      "when": "editorTextFocus && !editorReadonly"
+    }
+  ]
+Key 'ctrl+\\' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+\\",
+      "command": "workbench.action.splitEditor"
+    }
+  ]
+Key 'ctrl+]' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+]",
+      "command": "editor.action.indentLines",
+      "when": "editorTextFocus && !editorReadonly"
+    }
+  ]
+Bindings for 'ctrl+a' differ between Windows and MacOS:
+@@ -1,16 +1,7 @@
+
+ [
+   {
+     "key": "ctrl+a",
+-    "command": "editor.action.selectAll"
+-  },
+-  {
+-    "key": "ctrl+a",
+-    "command": "list.selectAll",
+-    "when": "listFocus && listSupportsMultiselect && !inputFocus && !treestickyScrollFocused"
+-  },
+-  {
+-    "key": "ctrl+a",
+-    "command": "notebook.cell.output.selectAll",
+-    "when": "notebookEditorFocused && notebookOutputFocused"
++    "command": "cursorLineStart",
++    "when": "textInputFocus"
+   }
+ ]
+Key 'ctrl+alt+.' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+alt+.",
+      "command": "workbench.action.chat.openModelPicker",
+      "when": "chatIsEnabled && inChatInput"
+    }
+  ]
+Bindings for 'ctrl+alt+/' differ between Windows and MacOS:
+@@ -1,7 +1,12 @@
+
+ [
+   {
+     "key": "ctrl+alt+/",
+-    "command": "workbench.action.chat.attach.instructions",
++    "command": "workbench.action.chat.run.prompt",
+     "when": "chatIsEnabled && config.chat.promptFiles"
++  },
++  {
++    "key": "ctrl+alt+/",
++    "command": "workbench.action.chat.run.prompt.current",
++    "when": "chatIsEnabled && config.chat.promptFiles && editorTextFocus && resourceSet && resourceLangId == 'prompt'"
+   }
+ ]
+Key 'ctrl+alt+b' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+alt+b",
+      "command": "workbench.action.toggleAuxiliaryBar"
+    }
+  ]
+Bindings for 'ctrl+alt+backspace' differ between Windows and MacOS:
+@@ -1,7 +1,7 @@
+
+ [
+   {
+     "key": "ctrl+alt+backspace",
+-    "command": "editor.action.removeBrackets",
+-    "when": "editorTextFocus"
++    "command": "deleteWordPartLeft",
++    "when": "textInputFocus && !editorReadonly"
+   }
+ ]
+Key 'ctrl+alt+c' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+alt+c",
+      "command": "debug.copyWatchExpression",
+      "when": "watchExpressionsExist && !expressionSelected && focusedView == 'workbench.debug.watchExpressionsView'"
+    }
+  ]
+Key 'ctrl+alt+down' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+alt+down",
+      "command": "editor.action.insertCursorBelow",
+      "when": "editorTextFocus"
+    },
+    {
+      "key": "ctrl+alt+down",
+      "command": "quickInput.nextSeparator",
+      "when": "inQuickInput && quickInputType == 'quickPick'"
+    }
+  ]
+Bindings for 'ctrl+alt+enter' differ between Windows and Linux:
+@@ -1,14 +1,4 @@
+
+ [
+-  {
+-    "key": "ctrl+alt+enter",
+-    "command": "notebook.cell.quitEdit",
+-    "when": "inputFocus && notebookEditorFocused && !inlineChatFocused && notebookCellType == 'markup'"
+-  },
+-  {
+-    "key": "ctrl+alt+enter",
+-    "command": "notebook.cell.execute",
+-    "when": "notebookCellListFocused && notebookMissingKernelExtension && !notebookCellExecuting && notebookCellType == 'code' || notebookCellListFocused && !notebookCellExecuting && notebookCellType == 'code' && notebookKernelCount > 0 || notebookCellListFocused && !notebookCellExecuting && notebookCellType == 'code' && notebookKernelSourceCount > 0"
+-  },
+   {
+     "key": "ctrl+alt+enter",
+     "command": "workbench.action.chat.runInTerminal",
+Key 'ctrl+alt+f' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+alt+f",
+      "command": "repl.action.find",
+      "when": "inDebugRepl || inDebugRepl && focusedView == 'workbench.panel.repl.view'"
+    },
+    {
+      "key": "ctrl+alt+f",
+      "command": "list.find",
+      "when": "listFocus && listSupportsFind"
+    },
+    {
+      "key": "ctrl+alt+f",
+      "command": "list.find.replInputFocus",
+      "when": "view == 'workbench.panel.repl.view'"
+    }
+  ]
+Key 'ctrl+alt+i' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+alt+i",
+      "command": "workbench.action.chat.open",
+      "when": "!chatSetupDisabled && !chatSetupHidden"
+    },
+    {
+      "key": "ctrl+alt+i",
+      "command": "workbench.panel.chat",
+      "when": "workbench.panel.chat.view.copilot.active"
+    }
+  ]
+Bindings for 'ctrl+alt+left' differ between Windows and MacOS:
+@@ -1,6 +1,7 @@
+
+ [
+   {
+     "key": "ctrl+alt+left",
+-    "command": "workbench.action.moveEditorToPreviousGroup"
++    "command": "cursorWordPartLeft",
++    "when": "textInputFocus"
+   }
+ ]
+Key 'ctrl+alt+o' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+alt+o",
+      "command": "workbench.action.remote.showMenu"
+    }
+  ]
+Bindings for 'ctrl+alt+pagedown' differ between Windows and Linux:
+@@ -13,10 +13,5 @@
+
+     "key": "ctrl+alt+pagedown",
+     "command": "workbench.action.chat.nextCodeBlock",
+     "when": "chatIsEnabled && inChat"
+-  },
+-  {
+-    "key": "ctrl+alt+pagedown",
+-    "command": "workbench.action.terminal.scrollDown",
+-    "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
+   }
+ ]
+Bindings for 'ctrl+alt+pageup' differ between Windows and Linux:
+@@ -13,10 +13,5 @@
+
+     "key": "ctrl+alt+pageup",
+     "command": "workbench.action.chat.previousCodeBlock",
+     "when": "chatIsEnabled && inChat"
+-  },
+-  {
+-    "key": "ctrl+alt+pageup",
+-    "command": "workbench.action.terminal.scrollUp",
+-    "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
+   }
+ ]
+Bindings for 'ctrl+alt+r' differ between Windows and Linux:
+@@ -1,4 +1,9 @@
+
+ [
++  {
++    "key": "ctrl+alt+r",
++    "command": "revealFileInOS",
++    "when": "!editorFocus"
++  },
+   {
+     "key": "ctrl+alt+r",
+     "command": "workbench.action.terminal.runRecentCommand",
+Bindings for 'ctrl+alt+right' differ between Windows and MacOS:
+@@ -1,7 +1,8 @@
+
+ [
+   {
+     "key": "ctrl+alt+right",
+-    "command": "workbench.action.moveEditorToNextGroup"
++    "command": "cursorWordPartRight",
++    "when": "textInputFocus"
+   },
+   {
+     "key": "ctrl+alt+right",
+Key 'ctrl+alt+up' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+alt+up",
+      "command": "editor.action.insertCursorAbove",
+      "when": "editorTextFocus"
+    },
+    {
+      "key": "ctrl+alt+up",
+      "command": "quickInput.previousSeparator",
+      "when": "inQuickInput && quickInputType == 'quickPick'"
+    }
+  ]
+Key 'ctrl+alt+v' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+alt+v",
+      "command": "workbench.action.editorDictation.start",
+      "when": "hasSpeechProvider && !editorReadonly && !speechToTextInProgress"
+    }
+  ]
+Key 'ctrl+alt+win+/' is not bound on Linux; on Windows, it is:
+  [
+    {
+      "key": "ctrl+alt+win+/",
+      "command": "workbench.action.chat.run-in-new-chat.prompt.current",
+      "when": "chatIsEnabled && config.chat.promptFiles && editorTextFocus && resourceSet && resourceLangId == 'prompt'"
+    }
+  ]
+Key 'ctrl+alt+win+n' is not bound on Linux; on Windows, it is:
+  [
+    {
+      "key": "ctrl+alt+win+n",
+      "command": "welcome.showNewFileEntries"
+    }
+  ]
+Bindings for 'ctrl+b' differ between Windows and MacOS:
+@@ -1,6 +1,7 @@
+
+ [
+   {
+     "key": "ctrl+b",
+-    "command": "workbench.action.toggleSidebarVisibility"
++    "command": "cursorLeft",
++    "when": "textInputFocus"
+   }
+ ]
+Bindings for 'ctrl+backspace' differ between Windows and Linux:
+@@ -21,13 +21,5 @@
+
+     "args": {
+       "text": "\u0017"
+     }
+-  },
+-  {
+-    "key": "ctrl+backspace",
+-    "command": "workbench.action.terminal.sendSequence",
+-    "when": "terminalFocus && terminalShellType == 'cmd'",
+-    "args": {
+-      "text": "\b"
+-    }
+   }
+ ]
+Key 'ctrl+c' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+c",
+      "command": "editor.action.clipboardCopyAction"
+    },
+    {
+      "key": "ctrl+c",
+      "command": "chat.inlineResourceAnchor.copyResource",
+      "when": "chatAttachmentResource"
+    },
+    {
+      "key": "ctrl+c",
+      "command": "keybindings.editor.copyKeybindingEntry",
+      "when": "inKeybindings && keybindingFocus && !whenFocus"
+    },
+    {
+      "key": "ctrl+c",
+      "command": "problems.action.copy",
+      "when": "problemsVisibility && !relatedInformationFocus && focusedView == 'workbench.panel.markers.view'"
+    },
+    {
+      "key": "ctrl+c",
+      "command": "search.action.copyMatch",
+      "when": "fileMatchOrMatchFocus"
+    },
+    {
+      "key": "ctrl+c",
+      "command": "workbench.action.terminal.copyAndClearSelection",
+      "when": "terminalTextSelectedInFocused || terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected || terminalFocus && terminalTextSelected && terminalTextSelectedInFocused || terminalHasBeenCreated && terminalTextSelected && terminalTextSelectedInFocused || terminalProcessSupported && terminalTextSelected && terminalTextSelectedInFocused"
+    },
+    {
+      "key": "ctrl+c",
+      "command": "workbench.debug.viewlet.action.copyValue",
+      "when": "!expressionSelected && focusedView == 'workbench.debug.variablesView' || !expressionSelected && focusedView == 'workbench.debug.watchExpressionsView'"
+    },
+    {
+      "key": "ctrl+c",
+      "command": "filesExplorer.copy",
+      "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !inputFocus"
+    },
+    {
+      "key": "ctrl+c",
+      "command": "remote.tunnel.copyAddressInline",
+      "when": "tunnelViewFocus && tunnelType == 'Detected' && tunnelViewMultiSelection == 'undefined' || tunnelViewFocus && tunnelType == 'Forwarded' && tunnelViewMultiSelection == 'undefined'"
+    }
+  ]
+Bindings for 'ctrl+d' differ between Windows and MacOS:
+@@ -1,12 +1,7 @@
+
+ [
+   {
+     "key": "ctrl+d",
+-    "command": "editor.action.addSelectionToNextFindMatch",
+-    "when": "editorFocus"
+-  },
+-  {
+-    "key": "ctrl+d",
+-    "command": "notebook.addFindMatchToSelection",
+-    "when": "config.notebook.multiCursor.enabled && notebookCellEditorFocused && activeEditor == 'workbench.editor.notebook'"
++    "command": "deleteRight",
++    "when": "textInputFocus"
+   }
+ ]
+Bindings for 'ctrl+delete' differ between Windows and MacOS:
+@@ -1,15 +1,7 @@
+
+ [
+   {
+     "key": "ctrl+delete",
+-    "command": "deleteWordRight",
+-    "when": "textInputFocus && !editorReadonly"
+-  },
+-  {
+-    "key": "ctrl+delete",
+-    "command": "workbench.action.terminal.sendSequence",
+-    "when": "terminalFocus",
+-    "args": {
+-      "text": "\u001bd"
+-    }
++    "command": "deleteRight",
++    "when": "textInputFocus"
+   }
+ ]
+Bindings for 'ctrl+down' differ between Windows and MacOS:
+@@ -1,127 +1,7 @@
+
+ [
+-  {
+-    "key": "ctrl+down",
+-    "command": "inlineChat.arrowOutDown",
+-    "when": "inlineChatFocused && inlineChatHasProvider && inlineChatInnerCursorLast && !accessibilityModeEnabled && !isEmbeddedDiffEditor"
+-  },
+-  {
+-    "key": "ctrl+down",
+-    "command": "scrollLineDown",
+-    "when": "textInputFocus"
+-  },
+-  {
+-    "key": "ctrl+down",
+-    "command": "notebook.cell.chat.arrowOutDown",
+-    "when": "inlineChatFocused && inlineChatInnerCursorLast && notebookCellChatFocused && !accessibilityModeEnabled && !notebookCellEditorFocused"
+-  },
+-  {
+-    "key": "ctrl+down",
+-    "command": "notebook.cell.focusNextChatWidget",
+-    "when": "editorTextFocus && inputFocus && isCompositeNotebook && !accessibilityModeEnabled && !isEmbeddedDiffEditor && !notebookCellEditorFocused && notebookEditorCursorAtBoundary != 'none' && notebookEditorCursorAtBoundary != 'top' || editorTextFocus && inputFocus && notebookCellEditorFocused && !accessibilityModeEnabled && !isCompositeNotebook && !isEmbeddedDiffEditor && notebookEditorCursorAtBoundary != 'none' && notebookEditorCursorAtBoundary != 'top'"
+-  },
+-  {
+-    "key": "ctrl+down",
+-    "command": "inlineChat.focus",
+-    "when": "editorTextFocus && inlineChatVisible && !accessibilityModeEnabled && !inlineChatFocused && !isEmbeddedDiffEditor && inlineChatOuterCursorPosition == 'above'"
+-  },
+-  {
+-    "key": "ctrl+down",
+-    "command": "editor.action.goToBottomHover",
+-    "when": "editorHoverFocused"
+-  },
+-  {
+-    "key": "ctrl+down",
+-    "command": "repl.input.focus",
+-    "when": "isCompositeNotebook && notebookEditorFocused"
+-  },
+-  {
+-    "key": "ctrl+down",
+-    "command": "selectNextSuggestion",
+-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+-  },
+-  {
+-    "key": "ctrl+down",
+-    "command": "chat.action.focus",
+-    "when": "inChat && inChatInput && quickChatHasFocus"
+-  },
+-  {
+-    "key": "ctrl+down",
+-    "command": "commentsFocusViewFromFilter",
+-    "when": "commentsFilterFocus"
+-  },
+-  {
+-    "key": "ctrl+down",
+-    "command": "inlineChat.viewInChat",
+-    "when": "inChatInput && inlineChatHasProvider && inlineChatVisible"
+-  },
+-  {
+-    "key": "ctrl+down",
+-    "command": "keybindings.editor.focusKeybindings",
+-    "when": "inKeybindings && inKeybindingsSearch"
+-  },
+-  {
+-    "key": "ctrl+down",
+-    "command": "list.scrollDown",
+-    "when": "listFocus && !inputFocus && !treestickyScrollFocused && listScrollAtBoundary != 'both' && listScrollAtBoundary != 'bottom'"
+-  },
+-  {
+-    "key": "ctrl+down",
+-    "command": "notebook.cell.chat.focus",
+-    "when": "notebookEditorFocused && !inputFocus && notebookChatOuterFocusPosition == 'above'"
+-  },
+-  {
+-    "key": "ctrl+down",
+-    "command": "notebook.cell.chat.focusNextCell",
+-    "when": "inlineChatFocused && notebookCellChatFocused"
+-  },
+-  {
+-    "key": "ctrl+down",
+-    "command": "notebook.cell.focusInOutput",
+-    "when": "isWindows && notebookCellHasOutputs && notebookEditorFocused && !isCompositeNotebook"
+-  },
+-  {
+-    "key": "ctrl+down",
+-    "command": "notebook.focusNextEditor",
+-    "when": "notebookEditorFocused && notebookOutputFocused"
+-  },
+-  {
+-    "key": "ctrl+down",
+-    "command": "problems.action.focusProblemsFromFilter",
+-    "when": "problemsFilterFocus"
+-  },
+   {
+     "key": "ctrl+down",
+     "command": "quickInput.next",
+     "when": "inQuickInput && quickInputType == 'quickPick'"
+-  },
+-  {
+-    "key": "ctrl+down",
+-    "command": "search.focus.nextInputBox",
+-    "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible"
+-  },
+-  {
+-    "key": "ctrl+down",
+-    "command": "widgetNavigation.focusNext",
+-    "when": "inputFocus && navigableContainerFocused || navigableContainerFocused && treestickyScrollFocused || navigableContainerFocused && !listFocus || navigableContainerFocused && listScrollAtBoundary == 'both' || navigableContainerFocused && listScrollAtBoundary == 'bottom'"
+-  },
+-  {
+-    "key": "ctrl+down",
+-    "command": "workbench.action.chat.focusInput",
+-    "when": "inChat && !inChatInput && !quickChatHasFocus"
+-  },
+-  {
+-    "key": "ctrl+down",
+-    "command": "workbench.action.terminal.focus",
+-    "when": "accessibilityModeEnabled && accessibleViewOnLastLine && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibilityModeEnabled && accessibleViewOnLastLine && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'"
+-  },
+-  {
+-    "key": "ctrl+down",
+-    "command": "workbench.action.terminal.scrollToNextCommand",
+-    "when": "terminalFocus && terminalHasBeenCreated && !accessibilityModeEnabled || terminalFocus && terminalProcessSupported && !accessibilityModeEnabled"
+-  },
+-  {
+-    "key": "ctrl+down",
+-    "command": "selectNextCodeAction",
+-    "when": "codeActionMenuVisible"
+   }
+ ]
+Bindings for 'ctrl+e' differ between Windows and MacOS:
+@@ -1,16 +1,7 @@
+
+ [
+   {
+     "key": "ctrl+e",
+-    "command": "workbench.action.quickOpen"
+-  },
+-  {
+-    "key": "ctrl+e",
+-    "command": "editor.action.toggleScreenReaderAccessibilityMode",
+-    "when": "accessibilityHelpIsShown"
+-  },
+-  {
+-    "key": "ctrl+e",
+-    "command": "workbench.action.quickOpenNavigateNextInFilePicker",
+-    "when": "inFilesPicker && inQuickOpen"
++    "command": "cursorLineEnd",
++    "when": "textInputFocus"
+   }
+ ]
+Bindings for 'ctrl+end' differ between Windows and Linux:
+@@ -18,15 +18,5 @@
+
+     "key": "ctrl+end",
+     "command": "quickInput.last",
+     "when": "inQuickInput && quickInputType == 'quickPick'"
+-  },
+-  {
+-    "key": "ctrl+end",
+-    "command": "workbench.action.terminal.scrollToBottom",
+-    "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
+-  },
+-  {
+-    "key": "ctrl+end",
+-    "command": "workbench.action.terminal.scrollToBottomAccessibleView",
+-    "when": "accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibleViewIsShown && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'"
+   }
+ ]
+Bindings for 'ctrl+enter' differ between Windows and MacOS:
+@@ -1,28 +1,13 @@
+
+ [
+   {
+     "key": "ctrl+enter",
+-    "command": "refactorPreview.apply",
+-    "when": "refactorPreview.enabled && refactorPreview.hasCheckedChanges && focusedView == 'refactorPreview'"
++    "command": "notebook.cell.quitEdit",
++    "when": "inputFocus && notebookEditorFocused && !inlineChatFocused && notebookCellType == 'markup'"
+   },
+   {
+     "key": "ctrl+enter",
+-    "command": "editor.action.insertLineAfter",
+-    "when": "editorTextFocus && !editorReadonly"
+-  },
+-  {
+-    "key": "ctrl+enter",
+-    "command": "editor.action.submitComment",
+-    "when": "commentEditorFocused"
+-  },
+-  {
+-    "key": "ctrl+enter",
+-    "command": "interactive.execute",
+-    "when": "isCompositeNotebook && activeEditor == 'workbench.editor.interactive'"
+-  },
+-  {
+-    "key": "ctrl+enter",
+-    "command": "mergeEditor.acceptMerge",
+-    "when": "isMergeEditor"
++    "command": "notebook.cell.execute",
++    "when": "notebookCellListFocused && notebookMissingKernelExtension && !notebookCellExecuting && notebookCellType == 'code' || notebookCellListFocused && !notebookCellExecuting && notebookCellType == 'code' && notebookKernelCount > 0 || notebookCellListFocused && !notebookCellExecuting && notebookCellType == 'code' && notebookKernelSourceCount > 0"
+   },
+   {
+     "key": "ctrl+enter",
+@@ -31,63 +16,8 @@
+
+   },
+   {
+     "key": "ctrl+enter",
+-    "command": "repl.execute",
+-    "when": "isCompositeNotebook && !notebookCellListFocused && activeEditor == 'workbench.editor.repl'"
+-  },
+-  {
+-    "key": "ctrl+enter",
+-    "command": "workbench.action.chat.submitWithCodebase",
+-    "when": "chatInputHasText && chatRequestIsPaused && inChatInput || chatInputHasText && inChatInput && !chatSessionRequestInProgress || chatPromptFileAttached && chatRequestIsPaused && inChatInput || chatPromptFileAttached && inChatInput && !chatSessionRequestInProgress"
+-  },
+-  {
+-    "key": "ctrl+enter",
+-    "command": "notebook.cell.chat.acceptChanges",
+-    "when": "inlineChatFocused && notebookCellChatFocused && !notebookCellEditorFocused"
+-  },
+-  {
+-    "key": "ctrl+enter",
+-    "command": "acceptRenameInputWithPreview",
+-    "when": "config.editor.rename.enablePreview && editorFocus && renameInputVisible && !isComposing"
+-  },
+-  {
+-    "key": "ctrl+enter",
+-    "command": "breadcrumbs.revealFocused",
+-    "when": "breadcrumbsActive && breadcrumbsVisible"
+-  },
+-  {
+-    "key": "ctrl+enter",
+-    "command": "breadcrumbs.revealFocusedFromTreeAside",
+-    "when": "breadcrumbsActive && breadcrumbsVisible && listFocus && !inputFocus && !treestickyScrollFocused"
+-  },
+-  {
+-    "key": "ctrl+enter",
+-    "command": "chatEditing.acceptAllFiles",
+-    "when": "hasUndecidedChatEditingResource && inChatInput && !chatSessionRequestInProgress"
+-  },
+-  {
+-    "key": "ctrl+enter",
+-    "command": "debug.openBreakpointToSide",
+-    "when": "breakpointsFocused"
+-  },
+-  {
+-    "key": "ctrl+enter",
+     "command": "explorer.openToSide",
+     "when": "explorerViewletFocus && foldersViewVisible && !inputFocus"
+-  },
+-  {
+-    "key": "ctrl+enter",
+-    "command": "inlineChat2.keep",
+-    "when": "inlineChatHasEditsAgent && inlineChatVisible && !chatEdits.isRequestInProgress"
+-  },
+-  {
+-    "key": "ctrl+enter",
+-    "command": "notebook.cell.chat.acceptChanges",
+-    "when": "notebookEditorFocused && !inputFocus && !notebookCellEditorFocused && notebookChatOuterFocusPosition == 'below'"
+-  },
+-  {
+-    "key": "ctrl+enter",
+-    "command": "notebook.cell.insertCodeCellBelow",
+-    "when": "notebookCellListFocused && !inputFocus && notebookChatOuterFocusPosition == ''"
+   },
+   {
+     "key": "ctrl+enter",
+@@ -96,33 +26,8 @@
+
+   },
+   {
+     "key": "ctrl+enter",
+-    "command": "scm.acceptInput",
+-    "when": "scmRepository"
+-  },
+-  {
+-    "key": "ctrl+enter",
+     "command": "search.action.openResultToSide",
+     "when": "fileMatchOrMatchFocus && searchViewletVisible"
+-  },
+-  {
+-    "key": "ctrl+enter",
+-    "command": "workbench.action.terminal.chat.runCommand",
+-    "when": "chatIsEnabled && terminalChatResponseContainsCodeBlock && terminalHasBeenCreated && !terminalChatActiveRequest && !terminalChatResponseContainsMultipleCodeBlocks || chatIsEnabled && terminalChatResponseContainsCodeBlock && terminalProcessSupported && !terminalChatActiveRequest && !terminalChatResponseContainsMultipleCodeBlocks"
+-  },
+-  {
+-    "key": "ctrl+enter",
+-    "command": "workbench.action.terminal.chat.runFirstCommand",
+-    "when": "chatIsEnabled && terminalChatResponseContainsMultipleCodeBlocks && terminalHasBeenCreated && !terminalChatActiveRequest || chatIsEnabled && terminalChatResponseContainsMultipleCodeBlocks && terminalProcessSupported && !terminalChatActiveRequest"
+-  },
+-  {
+-    "key": "ctrl+enter",
+-    "command": "workbench.action.chat.acceptTool",
+-    "when": "chatHasToolConfirmation && inChat"
+-  },
+-  {
+-    "key": "ctrl+enter",
+-    "command": "inlineChat.acceptChanges",
+-    "when": "inlineChatHasProvider && inlineChatVisible"
+   },
+   {
+     "key": "ctrl+enter",
+@@ -138,10 +43,5 @@
+
+     "key": "ctrl+enter",
+     "command": "chat.inlineResourceAnchor.openToSide",
+     "when": "chatAttachmentResource"
+-  },
+-  {
+-    "key": "ctrl+enter",
+-    "command": "previewSelectedCodeAction",
+-    "when": "codeActionMenuVisible"
+   }
+ ]
+Bindings for 'ctrl+f' differ between Windows and MacOS:
+@@ -1,52 +1,7 @@
+
+ [
+   {
+     "key": "ctrl+f",
+-    "command": "actions.find",
+-    "when": "editorFocus || editorIsOpen"
+-  },
+-  {
+-    "key": "ctrl+f",
+-    "command": "editor.action.extensioneditor.showfind",
+-    "when": "!editorFocus && activeEditor == 'workbench.editor.extension'"
+-  },
+-  {
+-    "key": "ctrl+f",
+-    "command": "editor.action.webvieweditor.showFind",
+-    "when": "webviewFindWidgetEnabled && !editorFocus && activeEditor == 'WebviewEditor'"
+-  },
+-  {
+-    "key": "ctrl+f",
+-    "command": "repl.action.filter",
+-    "when": "inDebugRepl && textInputFocus"
+-  },
+-  {
+-    "key": "ctrl+f",
+-    "command": "settings.action.search",
+-    "when": "inSettingsEditor"
+-  },
+-  {
+-    "key": "ctrl+f",
+-    "command": "commentsFocusFilter",
+-    "when": "focusedView == 'workbench.panel.comments'"
+-  },
+-  {
+-    "key": "ctrl+f",
+-    "command": "keybindings.editor.searchKeybindings",
+-    "when": "inKeybindings"
+-  },
+-  {
+-    "key": "ctrl+f",
+-    "command": "notebook.find",
+-    "when": "notebookEditorFocused && !editorFocus && activeEditor == 'workbench.editor.interactive' || notebookEditorFocused && !editorFocus && activeEditor == 'workbench.editor.notebook'"
+-  },
+-  {
+-    "key": "ctrl+f",
+-    "command": "problems.action.focusFilter",
+-    "when": "focusedView == 'workbench.panel.markers.view'"
+-  },
+-  {
+-    "key": "ctrl+f",
+-    "command": "workbench.action.terminal.focusFind",
+-    "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
++    "command": "cursorRight",
++    "when": "textInputFocus"
+   }
+ ]
+Key 'ctrl+f11' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+f11",
+      "command": "workbench.action.debug.stepIntoTarget",
+      "when": "inDebugMode && stepIntoTargetsSupported && debugState == 'stopped'"
+    }
+  ]
+Key 'ctrl+f12' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+f12",
+      "command": "editor.action.goToImplementation",
+      "when": "editorHasImplementationProvider && editorTextFocus"
+    },
+    {
+      "key": "ctrl+f12",
+      "command": "editor.action.revealDefinition",
+      "when": "editorHasDefinitionProvider && editorTextFocus && isWeb"
+    }
+  ]
+Key 'ctrl+f2' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+f2",
+      "command": "editor.action.changeAll",
+      "when": "editorTextFocus && !editorReadonly"
+    }
+  ]
+Key 'ctrl+f3' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+f3",
+      "command": "editor.action.nextSelectionMatchFindAction",
+      "when": "editorFocus"
+    }
+  ]
+Key 'ctrl+f4' is not bound on Linux; on Windows, it is:
+  [
+    {
+      "key": "ctrl+f4",
+      "command": "workbench.action.closeActiveEditor"
+    },
+    {
+      "key": "ctrl+f4",
+      "command": "workbench.action.closeGroup",
+      "when": "activeEditorGroupEmpty && multipleEditorGroups"
+    },
+    {
+      "key": "ctrl+f4",
+      "command": "workbench.action.terminal.killEditor",
+      "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated || terminalEditorFocus && terminalFocus && terminalProcessSupported"
+    }
+  ]
+Bindings for 'ctrl+f5' differ between Windows and MacOS:
+@@ -1,9 +1,4 @@
+
+ [
+-  {
+-    "key": "ctrl+f5",
+-    "command": "debug.openView",
+-    "when": "!debuggersAvailable"
+-  },
+   {
+     "key": "ctrl+f5",
+     "command": "workbench.action.debug.run",
+Key 'ctrl+f9' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+f9",
+      "command": "workbench.action.chat.nextFileTree",
+      "when": "chatIsEnabled && inChat"
+    }
+  ]
+Bindings for 'ctrl+g' differ between Windows and MacOS:
+@@ -2,10 +2,5 @@
+
+   {
+     "key": "ctrl+g",
+     "command": "workbench.action.gotoLine"
+-  },
+-  {
+-    "key": "ctrl+g",
+-    "command": "workbench.action.terminal.goToRecentDirectory",
+-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+   }
+ ]
+Bindings for 'ctrl+h' differ between Windows and MacOS:
+@@ -1,7 +1,7 @@
+
+ [
+   {
+     "key": "ctrl+h",
+-    "command": "editor.action.startFindReplaceAction",
+-    "when": "editorFocus || editorIsOpen"
++    "command": "deleteLeft",
++    "when": "textInputFocus"
+   }
+ ]
+Bindings for 'ctrl+home' differ between Windows and Linux:
+@@ -18,15 +18,5 @@
+
+     "key": "ctrl+home",
+     "command": "quickInput.first",
+     "when": "inQuickInput && quickInputType == 'quickPick'"
+-  },
+-  {
+-    "key": "ctrl+home",
+-    "command": "workbench.action.terminal.scrollToTop",
+-    "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
+-  },
+-  {
+-    "key": "ctrl+home",
+-    "command": "workbench.action.terminal.scrollToTopAccessibleView",
+-    "when": "accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibleViewIsShown && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'"
+   }
+ ]
+Key 'ctrl+i' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+i",
+      "command": "editor.action.triggerSuggest",
+      "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+    },
+    {
+      "key": "ctrl+i",
+      "command": "settings.action.toggleAiSearch",
+      "when": "inSettingsEditor"
+    },
+    {
+      "key": "ctrl+i",
+      "command": "focusSuggestion",
+      "when": "suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+    },
+    {
+      "key": "ctrl+i",
+      "command": "toggleSuggestionDetails",
+      "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+    },
+    {
+      "key": "ctrl+i",
+      "command": "inlineChat.holdForSpeech",
+      "when": "hasSpeechProvider && inlineChatVisible && textInputFocus"
+    },
+    {
+      "key": "ctrl+i",
+      "command": "inlineChat.start",
+      "when": "editorFocus && inlineChatHasEditsAgent && inlineChatPossible && !editorReadonly && !editorSimpleInput || editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly && !editorSimpleInput"
+    },
+    {
+      "key": "ctrl+i",
+      "command": "inlineChat2.close",
+      "when": "inlineChatHasEditsAgent && inlineChatVisible && !chatEdits.isRequestInProgress && chatEdits.requestCount == '0' || inlineChatHasEditsAgent && inlineChatVisible && !chatEdits.hasEditorModifications && !chatEdits.isRequestInProgress && chatEdits.requestCount == '0'"
+    },
+    {
+      "key": "ctrl+i",
+      "command": "inlineChat2.reveal",
+      "when": "inlineChatHasEditsAgent && !chatEdits.isGlobalEditingSession && chatEdits.requestCount >= 1"
+    },
+    {
+      "key": "ctrl+i",
+      "command": "notebook.cell.chat.start",
+      "when": "config.notebook.experimental.cellChat && notebookChatAgentRegistered && notebookEditable && notebookEditorFocused && !inputFocus || config.notebook.experimental.generate && notebookChatAgentRegistered && notebookEditable && notebookEditorFocused && !inputFocus"
+    },
+    {
+      "key": "ctrl+i",
+      "command": "search.action.searchWithAI",
+      "when": "hasAIResultProviderKey && searchViewletFocus"
+    },
+    {
+      "key": "ctrl+i",
+      "command": "workbench.action.chat.holdToVoiceChatInChatView",
+      "when": "chatIsEnabled && hasSpeechProvider && !chatSessionRequestInProgress && !editorFocus && !inChatInput && !inlineChatFocused && !notebookEditorFocused && !searchViewletFocus"
+    },
+    {
+      "key": "ctrl+i",
+      "command": "workbench.action.chat.startVoiceChat",
+      "when": "chatIsEnabled && hasSpeechProvider && inChatInput && !chatSessionRequestInProgress && !editorFocus && !notebookEditorFocused && !scopedVoiceChatGettingReady && !speechToTextInProgress || chatIsEnabled && hasSpeechProvider && inlineChatFocused && !chatSessionRequestInProgress && !editorFocus && !notebookEditorFocused && !scopedVoiceChatGettingReady && !speechToTextInProgress"
+    },
+    {
+      "key": "ctrl+i",
+      "command": "workbench.action.chat.stopListeningAndSubmit",
+      "when": "inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'editor' || inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'inline' || inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'quick' || inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'view' || inlineChatFocused && voiceChatInProgress && scopedVoiceChatInProgress == 'editor' || inlineChatFocused && voiceChatInProgress && scopedVoiceChatInProgress == 'inline' || inlineChatFocused && voiceChatInProgress && scopedVoiceChatInProgress == 'quick' || inlineChatFocused && voiceChatInProgress && scopedVoiceChatInProgress == 'view'"
+    },
+    {
+      "key": "ctrl+i",
+      "command": "inlineChat.startWithCurrentLine",
+      "when": "inlineChatHasProvider && inlineChatShowingHint && !editorReadonly && !inlineChatVisible"
+    },
+    {
+      "key": "ctrl+i",
+      "command": "workbench.action.terminal.chat.start",
+      "when": "chatIsEnabled && terminalChatAgentRegistered && terminalFocusInAny && terminalHasBeenCreated || chatIsEnabled && terminalChatAgentRegistered && terminalFocusInAny && terminalProcessSupported"
+    },
+    {
+      "key": "ctrl+i",
+      "command": "workbench.action.terminal.suggestToggleDetails",
+      "when": "simpleSuggestWidgetHasFocusedSuggestion && terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible || simpleSuggestWidgetHasFocusedSuggestion && terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible"
+    }
+  ]
+Key 'ctrl+insert' is not bound on Linux; on Windows, it is:
+  [
+    {
+      "key": "ctrl+insert",
+      "command": "editor.action.clipboardCopyAction"
+    }
+  ]
+Bindings for 'ctrl+j' differ between Windows and MacOS:
+@@ -1,6 +1,7 @@
+
+ [
+   {
+     "key": "ctrl+j",
+-    "command": "workbench.action.togglePanel"
++    "command": "editor.action.joinLines",
++    "when": "editorTextFocus && !editorReadonly"
+   }
+ ]
+Key 'ctrl+k c' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k c",
+      "command": "workbench.files.action.compareWithClipboard"
+    }
+  ]
+Key 'ctrl+k ctrl+,' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+,",
+      "command": "editor.createFoldingRangeFromSelection",
+      "when": "editorTextFocus && foldingEnabled"
+    }
+  ]
+Key 'ctrl+k ctrl+-' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+-",
+      "command": "editor.foldAllExcept",
+      "when": "editorTextFocus && foldingEnabled"
+    }
+  ]
+Key 'ctrl+k ctrl+.' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+.",
+      "command": "editor.removeManualFoldingRanges",
+      "when": "editorTextFocus && foldingEnabled"
+    }
+  ]
+Key 'ctrl+k ctrl+/' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+/",
+      "command": "editor.foldAllBlockComments",
+      "when": "editorTextFocus && foldingEnabled"
+    }
+  ]
+Key 'ctrl+k ctrl+0' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+0",
+      "command": "editor.foldAll",
+      "when": "editorTextFocus && foldingEnabled"
+    }
+  ]
+Key 'ctrl+k ctrl+1' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+1",
+      "command": "editor.foldLevel1",
+      "when": "editorTextFocus && foldingEnabled"
+    }
+  ]
+Key 'ctrl+k ctrl+2' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+2",
+      "command": "editor.foldLevel2",
+      "when": "editorTextFocus && foldingEnabled"
+    }
+  ]
+Key 'ctrl+k ctrl+3' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+3",
+      "command": "editor.foldLevel3",
+      "when": "editorTextFocus && foldingEnabled"
+    }
+  ]
+Key 'ctrl+k ctrl+4' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+4",
+      "command": "editor.foldLevel4",
+      "when": "editorTextFocus && foldingEnabled"
+    }
+  ]
+Key 'ctrl+k ctrl+5' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+5",
+      "command": "editor.foldLevel5",
+      "when": "editorTextFocus && foldingEnabled"
+    }
+  ]
+Key 'ctrl+k ctrl+6' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+6",
+      "command": "editor.foldLevel6",
+      "when": "editorTextFocus && foldingEnabled"
+    }
+  ]
+Key 'ctrl+k ctrl+7' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+7",
+      "command": "editor.foldLevel7",
+      "when": "editorTextFocus && foldingEnabled"
+    }
+  ]
+Key 'ctrl+k ctrl+8' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+8",
+      "command": "editor.foldAllMarkerRegions",
+      "when": "editorTextFocus && foldingEnabled"
+    }
+  ]
+Key 'ctrl+k ctrl+9' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+9",
+      "command": "editor.unfoldAllMarkerRegions",
+      "when": "editorTextFocus && foldingEnabled"
+    }
+  ]
+Key 'ctrl+k ctrl+=' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+=",
+      "command": "editor.unfoldAllExcept",
+      "when": "editorTextFocus && foldingEnabled"
+    }
+  ]
+Key 'ctrl+k ctrl+[' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+[",
+      "command": "editor.foldRecursively",
+      "when": "editorTextFocus && foldingEnabled"
+    }
+  ]
+Key 'ctrl+k ctrl+\\' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+\\",
+      "command": "workbench.action.splitEditorDown"
+    },
+    {
+      "key": "ctrl+k ctrl+\\",
+      "command": "workbench.action.splitEditorLeft"
+    },
+    {
+      "key": "ctrl+k ctrl+\\",
+      "command": "workbench.action.splitEditorOrthogonal"
+    },
+    {
+      "key": "ctrl+k ctrl+\\",
+      "command": "workbench.action.splitEditorRight"
+    },
+    {
+      "key": "ctrl+k ctrl+\\",
+      "command": "workbench.action.splitEditorUp"
+    }
+  ]
+Key 'ctrl+k ctrl+]' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+]",
+      "command": "editor.unfoldRecursively",
+      "when": "editorTextFocus && foldingEnabled"
+    }
+  ]
+Key 'ctrl+k ctrl+a' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+a",
+      "command": "keybindings.editor.addKeybinding",
+      "when": "inKeybindings && keybindingFocus"
+    }
+  ]
+Key 'ctrl+k ctrl+alt+c' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+alt+c",
+      "command": "workbench.action.addComment",
+      "when": "activeCursorHasCommentingRange"
+    }
+  ]
+Key 'ctrl+k ctrl+alt+down' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+alt+down",
+      "command": "editor.action.nextCommentingRange",
+      "when": "accessibilityModeEnabled && commentFocused || accessibilityModeEnabled && editorFocus || accessibilityHelpIsShown && accessibilityModeEnabled && accessibleViewCurrentProviderId == 'comments'"
+    }
+  ]
+Key 'ctrl+k ctrl+alt+s' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+alt+s",
+      "command": "git.stageSelectedRanges",
+      "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'"
+    }
+  ]
+Key 'ctrl+k ctrl+alt+up' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+alt+up",
+      "command": "editor.action.previousCommentingRange",
+      "when": "accessibilityModeEnabled && commentFocused || accessibilityModeEnabled && editorFocus || accessibilityHelpIsShown && accessibilityModeEnabled && accessibleViewCurrentProviderId == 'comments'"
+    }
+  ]
+Key 'ctrl+k ctrl+b' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+b",
+      "command": "editor.action.setSelectionAnchor",
+      "when": "editorTextFocus"
+    }
+  ]
+Key 'ctrl+k ctrl+c' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+c",
+      "command": "editor.action.addCommentLine",
+      "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+      "key": "ctrl+k ctrl+c",
+      "command": "notebook.cell.collapseCellInput",
+      "when": "notebookCellListFocused && !inputFocus && !notebookCellInputIsCollapsed"
+    },
+    {
+      "key": "ctrl+k ctrl+c",
+      "command": "notebook.cell.expandCellInput",
+      "when": "notebookCellInputIsCollapsed && notebookCellListFocused"
+    }
+  ]
+Key 'ctrl+k ctrl+d' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+d",
+      "command": "editor.action.moveSelectionToNextFindMatch",
+      "when": "editorFocus"
+    }
+  ]
+Key 'ctrl+k ctrl+down' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+down",
+      "command": "workbench.action.focusBelowGroup"
+    }
+  ]
+Key 'ctrl+k ctrl+e' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+e",
+      "command": "keybindings.editor.defineWhenExpression",
+      "when": "inKeybindings && keybindingFocus"
+    }
+  ]
+Key 'ctrl+k ctrl+f' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+f",
+      "command": "editor.action.formatSelection",
+      "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+    }
+  ]
+Key 'ctrl+k ctrl+f12' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+f12",
+      "command": "editor.action.revealDefinitionAside",
+      "when": "editorHasDefinitionProvider && editorTextFocus && isWeb && !isInEmbeddedEditor"
+    }
+  ]
+Key 'ctrl+k ctrl+i' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+i",
+      "command": "editor.action.showHover",
+      "when": "editorTextFocus"
+    },
+    {
+      "key": "ctrl+k ctrl+i",
+      "command": "editor.debug.action.showDebugHover",
+      "when": "editorTextFocus && inDebugMode"
+    },
+    {
+      "key": "ctrl+k ctrl+i",
+      "command": "workbench.action.showHover",
+      "when": "!editorTextFocus"
+    },
+    {
+      "key": "ctrl+k ctrl+i",
+      "command": "list.showHover",
+      "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+    },
+    {
+      "key": "ctrl+k ctrl+i",
+      "command": "workbench.action.terminal.focusHover",
+      "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalIsOpen || terminalFocus && terminalProcessSupported || terminalHasBeenCreated && terminalTabsFocus || terminalIsOpen && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus"
+    }
+  ]
+Key 'ctrl+k ctrl+j' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+j",
+      "command": "editor.unfoldAll",
+      "when": "editorTextFocus && foldingEnabled"
+    }
+  ]
+Key 'ctrl+k ctrl+l' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+l",
+      "command": "editor.toggleFold",
+      "when": "editorTextFocus && foldingEnabled"
+    }
+  ]
+Key 'ctrl+k ctrl+left' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+left",
+      "command": "workbench.action.focusLeftGroup"
+    }
+  ]
+Key 'ctrl+k ctrl+m' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+m",
+      "command": "workbench.action.toggleMaximizeEditorGroup",
+      "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
+    }
+  ]
+Key 'ctrl+k ctrl+n' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+n",
+      "command": "git.unstageSelectedRanges",
+      "when": "editorTextFocus && isInDiffEditor && isInDiffRightEditor && !operationInProgress && resourceScheme == 'git'"
+    }
+  ]
+Key 'ctrl+k ctrl+o' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+o",
+      "command": "workbench.action.files.openFolder",
+      "when": "openFolderWorkspaceSupport"
+    },
+    {
+      "key": "ctrl+k ctrl+o",
+      "command": "workbench.action.files.openLocalFolder",
+      "when": "remoteFileDialogVisible"
+    }
+  ]
+Key 'ctrl+k ctrl+p' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+p",
+      "command": "workbench.action.showAllEditors"
+    }
+  ]
+Key 'ctrl+k ctrl+pagedown' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+pagedown",
+      "command": "workbench.action.nextEditorInGroup"
+    }
+  ]
+Key 'ctrl+k ctrl+pageup' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+pageup",
+      "command": "workbench.action.previousEditorInGroup"
+    }
+  ]
+Key 'ctrl+k ctrl+q' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+q",
+      "command": "workbench.action.navigateToLastEditLocation"
+    }
+  ]
+Key 'ctrl+k ctrl+r' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+r",
+      "command": "workbench.action.keybindingsReference"
+    },
+    {
+      "key": "ctrl+k ctrl+r",
+      "command": "git.revertSelectedRanges",
+      "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'"
+    }
+  ]
+Key 'ctrl+k ctrl+right' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+right",
+      "command": "workbench.action.focusRightGroup"
+    }
+  ]
+Key 'ctrl+k ctrl+s' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+s",
+      "command": "workbench.action.openGlobalKeybindings"
+    }
+  ]
+Key 'ctrl+k ctrl+shift+\\' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+shift+\\",
+      "command": "notebook.cell.split",
+      "when": "editorTextFocus && notebookCellEditable && notebookEditable && notebookEditorFocused"
+    },
+    {
+      "key": "ctrl+k ctrl+shift+\\",
+      "command": "workbench.action.joinEditorInGroup",
+      "when": "sideBySideEditorActive"
+    },
+    {
+      "key": "ctrl+k ctrl+shift+\\",
+      "command": "workbench.action.splitEditorInGroup",
+      "when": "activeEditorCanSplitInGroup"
+    }
+  ]
+Key 'ctrl+k ctrl+shift+c' is not bound on Linux; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+shift+c",
+      "command": "copyRelativeFilePath",
+      "when": "!editorFocus"
+    },
+    {
+      "key": "ctrl+k ctrl+shift+c",
+      "command": "copyRelativeFilePath",
+      "when": "editorFocus"
+    }
+  ]
+Key 'ctrl+k ctrl+shift+l' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+shift+l",
+      "command": "editor.toggleFoldRecursively",
+      "when": "editorTextFocus && foldingEnabled"
+    }
+  ]
+Key 'ctrl+k ctrl+shift+n' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+shift+n",
+      "command": "notifications.showList"
+    }
+  ]
+Key 'ctrl+k ctrl+shift+s' is not bound on Linux; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+shift+s",
+      "command": "workbench.action.files.saveWithoutFormatting"
+    }
+  ]
+Key 'ctrl+k ctrl+shift+w' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+shift+w",
+      "command": "workbench.action.closeAllGroups"
+    }
+  ]
+Key 'ctrl+k ctrl+t' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+t",
+      "command": "workbench.action.selectTheme"
+    }
+  ]
+Key 'ctrl+k ctrl+u' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+u",
+      "command": "editor.action.removeCommentLine",
+      "when": "editorTextFocus && !editorReadonly"
+    }
+  ]
+Key 'ctrl+k ctrl+up' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+up",
+      "command": "workbench.action.focusAboveGroup"
+    }
+  ]
+Key 'ctrl+k ctrl+w' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+w",
+      "command": "workbench.action.closeAllEditors"
+    }
+  ]
+Key 'ctrl+k ctrl+x' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k ctrl+x",
+      "command": "editor.action.trimTrailingWhitespace",
+      "when": "editorTextFocus && !editorReadonly"
+    }
+  ]
+Key 'ctrl+k d' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k d",
+      "command": "workbench.files.action.compareWithSaved"
+    }
+  ]
+Key 'ctrl+k down' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k down",
+      "command": "workbench.action.moveActiveEditorGroupDown"
+    },
+    {
+      "key": "ctrl+k down",
+      "command": "views.moveViewDown",
+      "when": "focusedView != ''"
+    }
+  ]
+Key 'ctrl+k e' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k e",
+      "command": "workbench.files.action.focusOpenEditorsView",
+      "when": "workbench.explorer.openEditorsView.active"
+    }
+  ]
+Key 'ctrl+k enter' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k enter",
+      "command": "workbench.action.keepEditor"
+    }
+  ]
+Key 'ctrl+k f' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k f",
+      "command": "workbench.action.closeFolder",
+      "when": "emptyWorkspaceSupport && workbenchState != 'empty'"
+    }
+  ]
+Key 'ctrl+k f12' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k f12",
+      "command": "editor.action.revealDefinitionAside",
+      "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    }
+  ]
+Key 'ctrl+k f2' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k f2",
+      "command": "togglePeekWidgetFocus",
+      "when": "inReferenceSearchEditor || referenceSearchVisible"
+    }
+  ]
+Key 'ctrl+k i' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k i",
+      "command": "inlineChat.startWithCurrentLine",
+      "when": "inlineChatHasProvider && !editorReadonly && !inlineChatVisible"
+    },
+    {
+      "key": "ctrl+k i",
+      "command": "notebook.cell.chat.start",
+      "when": "config.notebook.experimental.cellChat && notebookChatAgentRegistered && notebookEditable && notebookEditorFocused && !inputFocus || config.notebook.experimental.generate && notebookChatAgentRegistered && notebookEditable && notebookEditorFocused && !inputFocus"
+    }
+  ]
+Key 'ctrl+k left' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k left",
+      "command": "workbench.action.moveActiveEditorGroupLeft"
+    },
+    {
+      "key": "ctrl+k left",
+      "command": "views.moveViewLeft",
+      "when": "focusedView != ''"
+    }
+  ]
+Key 'ctrl+k m' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k m",
+      "command": "notebook.cell.changeLanguage",
+      "when": "notebookCellEditable && notebookEditable && notebookEditorFocused"
+    },
+    {
+      "key": "ctrl+k m",
+      "command": "workbench.action.editor.changeLanguageMode",
+      "when": "!notebookEditorFocused"
+    }
+  ]
+Key 'ctrl+k o' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k o",
+      "command": "workbench.action.copyEditorToNewWindow",
+      "when": "activeEditor"
+    }
+  ]
+Key 'ctrl+k p' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k p",
+      "command": "workbench.action.files.copyPathOfActiveFile"
+    }
+  ]
+Key 'ctrl+k r' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k r",
+      "command": "workbench.action.files.revealActiveFileInWindows"
+    }
+  ]
+Key 'ctrl+k right' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k right",
+      "command": "workbench.action.moveActiveEditorGroupRight"
+    },
+    {
+      "key": "ctrl+k right",
+      "command": "views.moveViewRight",
+      "when": "focusedView != ''"
+    }
+  ]
+Key 'ctrl+k s' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k s",
+      "command": "saveAll"
+    }
+  ]
+Key 'ctrl+k shift+enter' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k shift+enter",
+      "command": "workbench.action.pinEditor",
+      "when": "!activeEditorIsPinned"
+    },
+    {
+      "key": "ctrl+k shift+enter",
+      "command": "workbench.action.unpinEditor",
+      "when": "activeEditorIsPinned"
+    }
+  ]
+Key 'ctrl+k shift+o' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k shift+o",
+      "command": "workbench.action.compareEditor.openSide",
+      "when": "inDiffEditor"
+    }
+  ]
+Key 'ctrl+k t' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k t",
+      "command": "notebook.cell.collapseCellOutput",
+      "when": "notebookCellHasOutputs && notebookCellListFocused && !inputFocus && !notebookCellOutputIsCollapsed"
+    },
+    {
+      "key": "ctrl+k t",
+      "command": "notebook.cell.expandCellOutput",
+      "when": "notebookCellListFocused && notebookCellOutputIsCollapsed"
+    }
+  ]
+Key 'ctrl+k u' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k u",
+      "command": "workbench.action.closeUnmodifiedEditors"
+    }
+  ]
+Key 'ctrl+k up' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k up",
+      "command": "workbench.action.moveActiveEditorGroupUp"
+    },
+    {
+      "key": "ctrl+k up",
+      "command": "views.moveViewUp",
+      "when": "focusedView != ''"
+    }
+  ]
+Key 'ctrl+k v' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k v",
+      "command": "markdown.showPreviewToSide",
+      "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+    }
+  ]
+Key 'ctrl+k w' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k w",
+      "command": "workbench.action.closeEditorsInGroup"
+    }
+  ]
+Key 'ctrl+k y' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k y",
+      "command": "notebook.cell.toggleOutputScrolling",
+      "when": "notebookCellHasOutputs && notebookCellListFocused && !inputFocus"
+    }
+  ]
+Key 'ctrl+k z' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+k z",
+      "command": "workbench.action.toggleZenMode",
+      "when": "!isAuxiliaryWindowFocusedContext"
+    }
+  ]
+Bindings for 'ctrl+l' differ between Windows and MacOS:
+@@ -1,9 +1,4 @@
+
+ [
+-  {
+-    "key": "ctrl+l",
+-    "command": "expandLineSelection",
+-    "when": "textInputFocus"
+-  },
+   {
+     "key": "ctrl+l",
+     "command": "notebook.centerActiveCell",
+Key 'ctrl+left' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+left",
+      "command": "cursorWordLeft",
+      "when": "textInputFocus && !accessibilityModeEnabled"
+    },
+    {
+      "key": "ctrl+left",
+      "command": "breadcrumbs.focusPrevious",
+      "when": "breadcrumbsActive && breadcrumbsVisible"
+    },
+    {
+      "key": "ctrl+left",
+      "command": "cursorWordAccessibilityLeft",
+      "when": "accessibilityModeEnabled && isWindows && textInputFocus && focusedView == 'workbench.panel.output'"
+    },
+    {
+      "key": "ctrl+left",
+      "command": "list.collapseAll",
+      "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+    },
+    {
+      "key": "ctrl+left",
+      "command": "breadcrumbs.focusPreviousWithPicker",
+      "when": "breadcrumbsActive && breadcrumbsVisible && listFocus && !inputFocus && !treestickyScrollFocused"
+    }
+  ]
+Key 'ctrl+m' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+m",
+      "command": "editor.action.toggleTabFocusMode"
+    }
+  ]
+Bindings for 'ctrl+n' differ between Windows and MacOS:
+@@ -1,11 +1,32 @@
+
+ [
+   {
+     "key": "ctrl+n",
+-    "command": "workbench.action.files.newUntitledFile"
++    "command": "cursorDown",
++    "when": "textInputFocus"
+   },
+   {
+     "key": "ctrl+n",
+-    "command": "chatEditor.action.undoHunk",
+-    "when": "chatEdits.hasEditorModifications && editorFocus && !chatEdits.isRequestInProgress || chatEdits.hasEditorModifications && notebookCellListFocused && !chatEdits.isRequestInProgress"
++    "command": "showNextParameterHint",
++    "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
++  },
++  {
++    "key": "ctrl+n",
++    "command": "selectNextSuggestion",
++    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
++  },
++  {
++    "key": "ctrl+n",
++    "command": "list.focusDown",
++    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
++  },
++  {
++    "key": "ctrl+n",
++    "command": "workbench.action.quickOpenSelectNext",
++    "when": "inQuickOpen"
++  },
++  {
++    "key": "ctrl+n",
++    "command": "selectNextCodeAction",
++    "when": "codeActionMenuVisible"
+   }
+ ]
+Key 'ctrl+numpad0' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+numpad0",
+      "command": "workbench.action.zoomReset"
+    }
+  ]
+Key 'ctrl+numpad_add' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+numpad_add",
+      "command": "workbench.action.zoomIn"
+    }
+  ]
+Key 'ctrl+numpad_subtract' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+numpad_subtract",
+      "command": "workbench.action.zoomOut"
+    }
+  ]
+Bindings for 'ctrl+o' differ between Windows and MacOS:
+@@ -1,22 +1,7 @@
+
+ [
+   {
+     "key": "ctrl+o",
+-    "command": "workbench.action.files.openFile",
+-    "when": "true"
+-  },
+-  {
+-    "key": "ctrl+o",
+-    "command": "workbench.action.files.openFileFolder",
+-    "when": "isMacNative && openFolderWorkspaceSupport"
+-  },
+-  {
+-    "key": "ctrl+o",
+-    "command": "workbench.action.files.openFolderViaWorkspace",
+-    "when": "!openFolderWorkspaceSupport && workbenchState == 'workspace'"
+-  },
+-  {
+-    "key": "ctrl+o",
+-    "command": "workbench.action.files.openLocalFile",
+-    "when": "remoteFileDialogVisible"
++    "command": "lineBreakInsert",
++    "when": "textInputFocus && !editorReadonly"
+   }
+ ]
+Bindings for 'ctrl+p' differ between Windows and MacOS:
+@@ -1,11 +1,32 @@
+
+ [
+   {
+     "key": "ctrl+p",
+-    "command": "workbench.action.quickOpen"
++    "command": "cursorUp",
++    "when": "textInputFocus"
+   },
+   {
+     "key": "ctrl+p",
+-    "command": "workbench.action.quickOpenNavigateNextInFilePicker",
+-    "when": "inFilesPicker && inQuickOpen"
++    "command": "showPrevParameterHint",
++    "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
++  },
++  {
++    "key": "ctrl+p",
++    "command": "selectPrevSuggestion",
++    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
++  },
++  {
++    "key": "ctrl+p",
++    "command": "list.focusUp",
++    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
++  },
++  {
++    "key": "ctrl+p",
++    "command": "workbench.action.quickOpenSelectPrevious",
++    "when": "inQuickOpen"
++  },
++  {
++    "key": "ctrl+p",
++    "command": "selectPrevCodeAction",
++    "when": "codeActionMenuVisible"
+   }
+ ]
+Bindings for 'ctrl+pagedown' differ between Windows and MacOS:
+@@ -1,31 +1,12 @@
+
+ [
+   {
+     "key": "ctrl+pagedown",
+-    "command": "selectNextPageSuggestion",
+-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
++    "command": "scrollLineDown",
++    "when": "textInputFocus"
+   },
+   {
+     "key": "ctrl+pagedown",
+     "command": "quickInput.pageNext",
+     "when": "inQuickInput && quickInputType == 'quickPick'"
+-  },
+-  {
+-    "key": "ctrl+pagedown",
+-    "command": "workbench.action.nextEditor"
+-  },
+-  {
+-    "key": "ctrl+pagedown",
+-    "command": "workbench.action.terminal.focusNext",
+-    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+-  },
+-  {
+-    "key": "ctrl+pagedown",
+-    "command": "notebook.focusNextEditor",
+-    "when": "accessibilityModeEnabled && notebookCellEditorFocused"
+-  },
+-  {
+-    "key": "ctrl+pagedown",
+-    "command": "workbench.action.debug.nextConsole",
+-    "when": "inDebugRepl"
+   }
+ ]
+Bindings for 'ctrl+pageup' differ between Windows and MacOS:
+@@ -1,8 +1,8 @@
+
+ [
+   {
+     "key": "ctrl+pageup",
+-    "command": "selectPrevPageSuggestion",
+-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
++    "command": "scrollLineUp",
++    "when": "textInputFocus"
+   },
+   {
+     "key": "ctrl+pageup",
+@@ -11,21 +11,12 @@
+
+   },
+   {
+     "key": "ctrl+pageup",
+-    "command": "workbench.action.previousEditor"
+-  },
+-  {
+-    "key": "ctrl+pageup",
+-    "command": "workbench.action.terminal.focusPrevious",
+-    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
++    "command": "notebook.focusNextEditor",
++    "when": "accessibilityModeEnabled && notebookCellEditorFocused"
+   },
+   {
+     "key": "ctrl+pageup",
+     "command": "notebook.focusPreviousEditor",
+     "when": "accessibilityModeEnabled && notebookCellEditorFocused"
+-  },
+-  {
+-    "key": "ctrl+pageup",
+-    "command": "workbench.action.debug.prevConsole",
+-    "when": "inDebugRepl"
+   }
+ ]
+Bindings for 'ctrl+q' differ between Windows and Linux:
+@@ -1,11 +1,6 @@
+
+ [
+   {
+     "key": "ctrl+q",
+-    "command": "workbench.action.quickOpenView"
+-  },
+-  {
+-    "key": "ctrl+q",
+-    "command": "workbench.action.quickOpenNavigateNextInViewPicker",
+-    "when": "inQuickOpen && inViewsPicker"
++    "command": "workbench.action.quit"
+   }
+ ]
+Bindings for 'ctrl+r' differ between Windows and MacOS:
+@@ -1,31 +1,11 @@
+
+ [
+-  {
+-    "key": "ctrl+r",
+-    "command": "inlineChat.regenerate",
+-    "when": "inlineChatHasProvider && inlineChatVisible"
+-  },
+   {
+     "key": "ctrl+r",
+     "command": "workbench.action.openRecent"
+   },
+   {
+     "key": "ctrl+r",
+-    "command": "workbench.action.terminal.chat.rerunRequest",
+-    "when": "chatIsEnabled && terminalChatFocus && terminalHasBeenCreated && !terminalChatActiveRequest || chatIsEnabled && terminalChatFocus && terminalProcessSupported && !terminalChatActiveRequest"
+-  },
+-  {
+-    "key": "ctrl+r",
+-    "command": "workbench.action.terminal.runRecentCommand",
+-    "when": "accessibilityModeEnabled && terminalFocus && terminalHasBeenCreated || accessibilityModeEnabled && terminalFocus && terminalProcessSupported || accessibilityModeEnabled && accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibilityModeEnabled && accessibleViewIsShown && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'"
+-  },
+-  {
+-    "key": "ctrl+r",
+     "command": "workbench.action.quickOpenNavigateNextInRecentFilesPicker",
+     "when": "inQuickOpen && inRecentFilesPicker"
+-  },
+-  {
+-    "key": "ctrl+r",
+-    "command": "workbench.action.reloadWindow",
+-    "when": "isDevelopment"
+   }
+ ]
+Bindings for 'ctrl+right' differ between Windows and Linux:
+@@ -2,7 +2,7 @@
+
+   {
+     "key": "ctrl+right",
+     "command": "cursorWordEndRight",
+-    "when": "textInputFocus && !accessibilityModeEnabled"
++    "when": "textInputFocus"
+   },
+   {
+     "key": "ctrl+right",
+Key 'ctrl+s' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+s",
+      "command": "workbench.action.files.save"
+    }
+  ]
+Key 'ctrl+shift+,' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+,",
+      "command": "editor.action.inPlaceReplace.up",
+      "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+      "key": "ctrl+shift+,",
+      "command": "workbench.action.terminal.configureSuggestSettings",
+      "when": "terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible || terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible"
+    }
+  ]
+Bindings for 'ctrl+shift+-' differ between Windows and Linux:
+@@ -1,6 +1,7 @@
+
+ [
+   {
+     "key": "ctrl+shift+-",
+-    "command": "workbench.action.zoomOut"
++    "command": "workbench.action.navigateForward",
++    "when": "canNavigateForward"
+   }
+ ]
+Key 'ctrl+shift+.' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+.",
+      "command": "editor.action.inPlaceReplace.down",
+      "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+      "key": "ctrl+shift+.",
+      "command": "breadcrumbs.focusAndSelect",
+      "when": "breadcrumbsPossible && breadcrumbsVisible"
+    },
+    {
+      "key": "ctrl+shift+.",
+      "command": "breadcrumbs.toggleToOn",
+      "when": "!config.breadcrumbs.enabled"
+    },
+    {
+      "key": "ctrl+shift+.",
+      "command": "editor.action.accessibleViewGoToSymbol",
+      "when": "accessibilityHelpIsShown && accessibleViewGoToSymbolSupported || accessibleViewGoToSymbolSupported && accessibleViewIsShown"
+    }
+  ]
+Key 'ctrl+shift+1' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+1",
+      "command": "editor.action.replaceOne",
+      "when": "editorFocus && findWidgetVisible"
+    },
+    {
+      "key": "ctrl+shift+1",
+      "command": "search.action.replace",
+      "when": "isEditableItem && matchFocus && replaceActive && searchViewletVisible"
+    },
+    {
+      "key": "ctrl+shift+1",
+      "command": "search.action.replaceAllInFile",
+      "when": "fileMatchFocus && isEditableItem && replaceActive && searchViewletVisible"
+    },
+    {
+      "key": "ctrl+shift+1",
+      "command": "search.action.replaceAllInFolder",
+      "when": "folderMatchFocus && isEditableItem && replaceActive && searchViewletVisible"
+    }
+  ]
+Key 'ctrl+shift+;' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+;",
+      "command": "breadcrumbs.focus",
+      "when": "breadcrumbsPossible && breadcrumbsVisible"
+    }
+  ]
+Key 'ctrl+shift+=' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+=",
+      "command": "workbench.action.zoomIn"
+    }
+  ]
+Key 'ctrl+shift+[' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+[",
+      "command": "editor.fold",
+      "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+      "key": "ctrl+shift+[",
+      "command": "notebook.fold",
+      "when": "notebookEditorFocused && !inputFocus && activeEditor == 'workbench.editor.notebook'"
+    }
+  ]
+Key 'ctrl+shift+\\' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+\\",
+      "command": "editor.action.jumpToBracket",
+      "when": "editorTextFocus"
+    },
+    {
+      "key": "ctrl+shift+\\",
+      "command": "workbench.action.terminal.focusTabs",
+      "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported || terminalHasBeenCreated && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus"
+    }
+  ]
+Key 'ctrl+shift+]' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+]",
+      "command": "editor.unfold",
+      "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+      "key": "ctrl+shift+]",
+      "command": "notebook.unfold",
+      "when": "notebookEditorFocused && !inputFocus && activeEditor == 'workbench.editor.notebook'"
+    }
+  ]
+Bindings for 'ctrl+shift+a' differ between Windows and Linux:
+@@ -1,4 +1,9 @@
+
+ [
++  {
++    "key": "ctrl+shift+a",
++    "command": "editor.action.blockComment",
++    "when": "editorTextFocus && !editorReadonly"
++  },
+   {
+     "key": "ctrl+shift+a",
+     "command": "notification.acceptPrimaryAction",
+Key 'ctrl+shift+alt+down' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+alt+down",
+      "command": "cursorColumnSelectDown",
+      "when": "textInputFocus"
+    }
+  ]
+Key 'ctrl+shift+alt+l' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+alt+l",
+      "command": "workbench.action.quickchat.toggle",
+      "when": "chatIsEnabled"
+    }
+  ]
+Key 'ctrl+shift+alt+left' is not bound on Linux; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+alt+left",
+      "command": "cursorColumnSelectLeft",
+      "when": "textInputFocus"
+    }
+  ]
+Key 'ctrl+shift+alt+pagedown' is not bound on Linux; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+alt+pagedown",
+      "command": "cursorColumnSelectPageDown",
+      "when": "textInputFocus"
+    }
+  ]
+Key 'ctrl+shift+alt+pageup' is not bound on Linux; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+alt+pageup",
+      "command": "cursorColumnSelectPageUp",
+      "when": "textInputFocus"
+    }
+  ]
+Key 'ctrl+shift+alt+right' is not bound on Linux; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+alt+right",
+      "command": "cursorColumnSelectRight",
+      "when": "textInputFocus"
+    }
+  ]
+Key 'ctrl+shift+alt+up' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+alt+up",
+      "command": "cursorColumnSelectUp",
+      "when": "textInputFocus"
+    }
+  ]
+Key 'ctrl+shift+b' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+b",
+      "command": "workbench.action.tasks.build",
+      "when": "taskCommandsRegistered"
+    }
+  ]
+Key 'ctrl+shift+backspace' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+backspace",
+      "command": "search.searchEditor.action.deleteFileResults",
+      "when": "inSearchEditor"
+    }
+  ]
+Key 'ctrl+shift+c' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+c",
+      "command": "workbench.action.terminal.copySelection",
+      "when": "terminalTextSelectedInFocused || terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected || terminalFocus && terminalTextSelected && terminalTextSelectedInFocused || terminalHasBeenCreated && terminalTextSelected && terminalTextSelectedInFocused || terminalProcessSupported && terminalTextSelected && terminalTextSelectedInFocused"
+    },
+    {
+      "key": "ctrl+shift+c",
+      "command": "workbench.action.terminal.openNativeConsole",
+      "when": "!terminalFocus"
+    }
+  ]
+Key 'ctrl+shift+d' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+d",
+      "command": "workbench.view.debug",
+      "when": "viewContainer.workbench.view.debug.enabled"
+    }
+  ]
+Key 'ctrl+shift+down' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+down",
+      "command": "cursorDownSelect",
+      "when": "textInputFocus"
+    },
+    {
+      "key": "ctrl+shift+down",
+      "command": "notebook.cell.focusInOutput",
+      "when": "notebookCellHasOutputs && notebookEditorFocused"
+    },
+    {
+      "key": "ctrl+shift+down",
+      "command": "workbench.action.terminal.selectToNextCommand",
+      "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    }
+  ]
+Bindings for 'ctrl+shift+e' differ between Windows and MacOS:
+@@ -1,12 +1,7 @@
+
+ [
+   {
+     "key": "ctrl+shift+e",
+-    "command": "workbench.view.explorer",
+-    "when": "viewContainer.workbench.view.explorer.enabled"
+-  },
+-  {
+-    "key": "ctrl+shift+e",
+-    "command": "workbench.action.quickOpenNavigatePreviousInFilePicker",
+-    "when": "inFilesPicker && inQuickOpen"
++    "command": "cursorLineEndSelect",
++    "when": "textInputFocus"
+   }
+ ]
+Key 'ctrl+shift+end' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+end",
+      "command": "cursorBottomSelect",
+      "when": "textInputFocus"
+    }
+  ]
+Key 'ctrl+shift+enter' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+enter",
+      "command": "editor.action.insertLineBefore",
+      "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+      "key": "ctrl+shift+enter",
+      "command": "list.toggleSelection",
+      "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+    },
+    {
+      "key": "ctrl+shift+enter",
+      "command": "notebook.cell.insertCodeCellAbove",
+      "when": "notebookCellListFocused && !inputFocus"
+    },
+    {
+      "key": "ctrl+shift+enter",
+      "command": "search.action.replaceAllInFile",
+      "when": "fileMatchFocus && isEditableItem && replaceActive && searchViewletVisible"
+    },
+    {
+      "key": "ctrl+shift+enter",
+      "command": "search.action.replaceAllInFolder",
+      "when": "folderMatchFocus && isEditableItem && replaceActive && searchViewletVisible"
+    },
+    {
+      "key": "ctrl+shift+enter",
+      "command": "workbench.action.chat.sendToNewChat",
+      "when": "chatInputHasText && chatRequestIsPaused && inChatInput || chatInputHasText && inChatInput && !chatSessionRequestInProgress || chatPromptFileAttached && chatRequestIsPaused && inChatInput || chatPromptFileAttached && inChatInput && !chatSessionRequestInProgress"
+    }
+  ]
+Key 'ctrl+shift+f' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+f",
+      "command": "workbench.action.findInFiles"
+    },
+    {
+      "key": "ctrl+shift+f",
+      "command": "workbench.view.search",
+      "when": "workbench.view.search.active && neverMatch =~ /doesNotMatch/"
+    },
+    {
+      "key": "ctrl+shift+f",
+      "command": "workbench.action.terminal.searchWorkspace",
+      "when": "terminalFocus && terminalProcessSupported && terminalTextSelected"
+    }
+  ]
+Key 'ctrl+shift+f12' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+f12",
+      "command": "editor.action.peekImplementation",
+      "when": "editorHasImplementationProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    }
+  ]
+Key 'ctrl+shift+f2' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+f2",
+      "command": "editor.action.linkedEditing",
+      "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    }
+  ]
+Key 'ctrl+shift+f3' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+f3",
+      "command": "editor.action.previousSelectionMatchFindAction",
+      "when": "editorFocus"
+    }
+  ]
+Key 'ctrl+shift+f5' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+f5",
+      "command": "workbench.action.debug.restart",
+      "when": "inDebugMode"
+    }
+  ]
+Key 'ctrl+shift+f9' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+f9",
+      "command": "workbench.action.chat.previousFileTree",
+      "when": "chatIsEnabled && inChat"
+    }
+  ]
+Bindings for 'ctrl+shift+g' differ between Windows and MacOS:
+@@ -3,10 +3,5 @@
+
+     "key": "ctrl+shift+g",
+     "command": "workbench.view.scm",
+     "when": "workbench.scm.active"
+-  },
+-  {
+-    "key": "ctrl+shift+g",
+-    "command": "workbench.action.terminal.openDetectedLink",
+-    "when": "accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal'"
+   }
+ ]
+Key 'ctrl+shift+h' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+h",
+      "command": "workbench.action.replaceInFiles"
+    }
+  ]
+Key 'ctrl+shift+home' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+home",
+      "command": "cursorTopSelect",
+      "when": "textInputFocus"
+    }
+  ]
+Key 'ctrl+shift+i' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+i",
+      "command": "workbench.action.chat.openAgent",
+      "when": "config.chat.agent.enabled && !chatSetupDisabled && !chatSetupHidden"
+    },
+    {
+      "key": "ctrl+shift+i",
+      "command": "workbench.action.toggleDevTools",
+      "when": "isDevelopment"
+    }
+  ]
+Key 'ctrl+shift+j' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+j",
+      "command": "workbench.action.search.toggleQueryDetails",
+      "when": "inSearchEditor || searchViewletFocus"
+    }
+  ]
+Key 'ctrl+shift+k' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+k",
+      "command": "editor.action.deleteLines",
+      "when": "textInputFocus && !editorReadonly"
+    }
+  ]
+Key 'ctrl+shift+l' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+l",
+      "command": "editor.action.selectHighlights",
+      "when": "editorFocus"
+    },
+    {
+      "key": "ctrl+shift+l",
+      "command": "addCursorsAtSearchResults",
+      "when": "fileMatchOrMatchFocus && searchViewletVisible"
+    },
+    {
+      "key": "ctrl+shift+l",
+      "command": "notebook.selectAllFindMatches",
+      "when": "config.notebook.multiCursor.enabled && notebookFindWidgetFocused || config.notebook.multiCursor.enabled && notebookCellEditorFocused && activeEditor == 'workbench.editor.notebook'"
+    },
+    {
+      "key": "ctrl+shift+l",
+      "command": "selectAllSearchEditorMatches",
+      "when": "inSearchEditor"
+    }
+  ]
+Bindings for 'ctrl+shift+left' differ between Windows and Linux:
+@@ -2,11 +2,16 @@
+
+   {
+     "key": "ctrl+shift+left",
+     "command": "cursorWordLeftSelect",
+-    "when": "textInputFocus && !accessibilityModeEnabled"
++    "when": "textInputFocus"
+   },
+   {
+     "key": "ctrl+shift+left",
+     "command": "cursorWordAccessibilityLeftSelect",
+     "when": "accessibilityModeEnabled && isWindows && textInputFocus && focusedView == 'workbench.panel.output'"
++  },
++  {
++    "key": "ctrl+shift+left",
++    "command": "workbench.action.terminal.resizePaneLeft",
++    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+   }
+ ]
+Bindings for 'ctrl+shift+m' differ between Windows and MacOS:
+@@ -1,7 +1,6 @@
+
+ [
+   {
+     "key": "ctrl+shift+m",
+-    "command": "workbench.actions.view.problems",
+-    "when": "workbench.panel.markers.view.active"
++    "command": "editor.action.toggleTabFocusMode"
+   }
+ ]
+Key 'ctrl+shift+n' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+n",
+      "command": "workbench.action.newWindow"
+    },
+    {
+      "key": "ctrl+shift+n",
+      "command": "chatEditor.action.reject",
+      "when": "chatEdits.hasEditorModifications && editorFocus && !chatEdits.isRequestInProgress || chatEdits.hasEditorModifications && notebookEditorFocused && !chatEdits.isRequestInProgress"
+    }
+  ]
+Key 'ctrl+shift+o' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+o",
+      "command": "workbench.action.gotoSymbol",
+      "when": "!accessibilityHelpIsShown && !accessibleViewIsShown"
+    },
+    {
+      "key": "ctrl+shift+o",
+      "command": "workbench.action.terminal.openDetectedLink",
+      "when": "terminalFocus && terminalHasBeenCreated"
+    },
+    {
+      "key": "ctrl+shift+o",
+      "command": "editor.action.accessibleViewGoToSymbol",
+      "when": "accessibilityHelpIsShown && accessibleViewGoToSymbolSupported || accessibleViewGoToSymbolSupported && accessibleViewIsShown"
+    }
+  ]
+Key 'ctrl+shift+p' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+p",
+      "command": "workbench.action.showCommands"
+    },
+    {
+      "key": "ctrl+shift+p",
+      "command": "workbench.action.quickOpenNavigatePreviousInFilePicker",
+      "when": "inFilesPicker && inQuickOpen"
+    }
+  ]
+Key 'ctrl+shift+pagedown' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+pagedown",
+      "command": "workbench.action.moveEditorRightInGroup"
+    }
+  ]
+Key 'ctrl+shift+pageup' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+pageup",
+      "command": "workbench.action.moveEditorLeftInGroup"
+    }
+  ]
+Key 'ctrl+shift+q' is not bound on Linux; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+q",
+      "command": "workbench.action.quickOpenNavigatePreviousInViewPicker",
+      "when": "inQuickOpen && inViewsPicker"
+    }
+  ]
+Bindings for 'ctrl+shift+r' differ between Windows and MacOS:
+@@ -3,11 +3,6 @@
+
+     "key": "ctrl+shift+r",
+     "command": "editor.action.refactor",
+     "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+-  },
+-  {
+-    "key": "ctrl+shift+r",
+-    "command": "rerunSearchEditorSearch",
+-    "when": "inSearchEditor"
+   },
+   {
+     "key": "ctrl+shift+r",
+Bindings for 'ctrl+shift+right' differ between Windows and Linux:
+@@ -2,11 +2,16 @@
+
+   {
+     "key": "ctrl+shift+right",
+     "command": "cursorWordEndRightSelect",
+-    "when": "textInputFocus && !accessibilityModeEnabled"
++    "when": "textInputFocus"
+   },
+   {
+     "key": "ctrl+shift+right",
+     "command": "cursorWordAccessibilityRightSelect",
+     "when": "accessibilityModeEnabled && isWindows && textInputFocus && focusedView == 'workbench.panel.output'"
++  },
++  {
++    "key": "ctrl+shift+right",
++    "command": "workbench.action.terminal.resizePaneRight",
++    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+   }
+ ]
+Key 'ctrl+shift+s' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+s",
+      "command": "workbench.action.files.saveAs"
+    },
+    {
+      "key": "ctrl+shift+s",
+      "command": "workbench.action.files.saveLocalFile",
+      "when": "remoteFileDialogVisible"
+    }
+  ]
+Key 'ctrl+shift+space' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+space",
+      "command": "editor.action.triggerParameterHints",
+      "when": "editorHasSignatureHelpProvider && editorTextFocus"
+    }
+  ]
+Key 'ctrl+shift+t' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+t",
+      "command": "workbench.action.reopenClosedEditor"
+    },
+    {
+      "key": "ctrl+shift+t",
+      "command": "mergeEditor.toggleBetweenInputs",
+      "when": "isMergeEditor"
+    }
+  ]
+Key 'ctrl+shift+u' is not bound on Linux; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+u",
+      "command": "workbench.action.output.toggleOutput",
+      "when": "workbench.panel.output.active"
+    }
+  ]
+Key 'ctrl+shift+up' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+up",
+      "command": "cursorUpSelect",
+      "when": "textInputFocus"
+    },
+    {
+      "key": "ctrl+shift+up",
+      "command": "notebook.cell.focusOutOutput",
+      "when": "notebookEditorFocused && notebookOutputFocused"
+    },
+    {
+      "key": "ctrl+shift+up",
+      "command": "workbench.action.terminal.selectToPreviousCommand",
+      "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    }
+  ]
+Key 'ctrl+shift+v' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+v",
+      "command": "notebook.cell.pasteAbove",
+      "when": "notebookEditorFocused && !inputFocus"
+    },
+    {
+      "key": "ctrl+shift+v",
+      "command": "workbench.action.terminal.paste",
+      "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+      "key": "ctrl+shift+v",
+      "command": "markdown.showPreview",
+      "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+    }
+  ]
+Key 'ctrl+shift+w' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+w",
+      "command": "workbench.action.closeWindow"
+    }
+  ]
+Key 'ctrl+shift+x' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+x",
+      "command": "workbench.view.extensions",
+      "when": "viewContainer.workbench.view.extensions.enabled"
+    }
+  ]
+Key 'ctrl+shift+y' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+y",
+      "command": "workbench.debug.action.toggleRepl",
+      "when": "workbench.panel.repl.view.active"
+    },
+    {
+      "key": "ctrl+shift+y",
+      "command": "chatEditor.action.accept",
+      "when": "chatEdits.hasEditorModifications && editorFocus && !chatEdits.isRequestInProgress || chatEdits.hasEditorModifications && notebookEditorFocused && !chatEdits.isRequestInProgress"
+    }
+  ]
+Key 'ctrl+shift+z' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+shift+z",
+      "command": "redo"
+    }
+  ]
+Bindings for 'ctrl+t' differ between Windows and MacOS:
+@@ -1,6 +1,7 @@
+
+ [
+   {
+     "key": "ctrl+t",
+-    "command": "workbench.action.showAllSymbols"
++    "command": "editor.action.transposeLetters",
++    "when": "textInputFocus && !editorReadonly"
+   }
+ ]
+Key 'ctrl+u' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+u",
+      "command": "cursorUndo",
+      "when": "textInputFocus"
+    }
+  ]
+Bindings for 'ctrl+up' differ between Windows and MacOS:
+@@ -1,112 +1,7 @@
+
+ [
+-  {
+-    "key": "ctrl+up",
+-    "command": "inlineChat.arrowOutUp",
+-    "when": "inlineChatFocused && inlineChatHasProvider && inlineChatInnerCursorFirst && !accessibilityModeEnabled && !isEmbeddedDiffEditor"
+-  },
+-  {
+-    "key": "ctrl+up",
+-    "command": "scrollLineUp",
+-    "when": "textInputFocus"
+-  },
+-  {
+-    "key": "ctrl+up",
+-    "command": "notebook.cell.chat.arrowOutUp",
+-    "when": "inlineChatFocused && inlineChatInnerCursorFirst && notebookCellChatFocused && !accessibilityModeEnabled && !notebookCellEditorFocused"
+-  },
+-  {
+-    "key": "ctrl+up",
+-    "command": "notebook.cell.focusChatWidget",
+-    "when": "editorTextFocus && inputFocus && notebookEditorFocused && !accessibilityModeEnabled && !isEmbeddedDiffEditor && notebookEditorCursorAtBoundary != 'bottom' && notebookEditorCursorAtBoundary != 'none'"
+-  },
+-  {
+-    "key": "ctrl+up",
+-    "command": "inlineChat.focus",
+-    "when": "editorTextFocus && inlineChatVisible && !accessibilityModeEnabled && !inlineChatFocused && !isEmbeddedDiffEditor && inlineChatOuterCursorPosition == 'below'"
+-  },
+-  {
+-    "key": "ctrl+up",
+-    "command": "chat.action.focus",
+-    "when": "chatCursorAtTop && inChatInput && !quickChatHasFocus"
+-  },
+-  {
+-    "key": "ctrl+up",
+-    "command": "chat.action.focus",
+-    "when": "inChatInput && isLinux && !quickChatHasFocus || inChatInput && isWindows && !quickChatHasFocus"
+-  },
+-  {
+-    "key": "ctrl+up",
+-    "command": "editor.action.goToTopHover",
+-    "when": "editorHoverFocused"
+-  },
+-  {
+-    "key": "ctrl+up",
+-    "command": "selectPrevSuggestion",
+-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+-  },
+-  {
+-    "key": "ctrl+up",
+-    "command": "interactive.history.focus",
+-    "when": "isCompositeNotebook && isLinux && !notebookEditorFocused || isCompositeNotebook && isWindows && !notebookEditorFocused"
+-  },
+-  {
+-    "key": "ctrl+up",
+-    "command": "list.scrollUp",
+-    "when": "listFocus && !inputFocus && !treestickyScrollFocused && listScrollAtBoundary != 'both' && listScrollAtBoundary != 'top'"
+-  },
+-  {
+-    "key": "ctrl+up",
+-    "command": "notebook.cell.chat.focus",
+-    "when": "notebookEditorFocused && !inputFocus && notebookChatOuterFocusPosition == 'below'"
+-  },
+-  {
+-    "key": "ctrl+up",
+-    "command": "notebook.cell.chat.focusPreviousCell",
+-    "when": "inlineChatFocused && notebookCellChatFocused"
+-  },
+   {
+     "key": "ctrl+up",
+     "command": "quickInput.previous",
+     "when": "inQuickInput && quickInputType == 'quickPick'"
+-  },
+-  {
+-    "key": "ctrl+up",
+-    "command": "search.action.focusSearchFromResults",
+-    "when": "accessibilityModeEnabled && searchViewletVisible || firstMatchFocus && searchViewletVisible"
+-  },
+-  {
+-    "key": "ctrl+up",
+-    "command": "search.focus.previousInputBox",
+-    "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible && !searchInputBoxFocus"
+-  },
+-  {
+-    "key": "ctrl+up",
+-    "command": "widgetNavigation.focusPrevious",
+-    "when": "inputFocus && navigableContainerFocused || navigableContainerFocused && treestickyScrollFocused || navigableContainerFocused && !listFocus || navigableContainerFocused && listScrollAtBoundary == 'both' || navigableContainerFocused && listScrollAtBoundary == 'top'"
+-  },
+-  {
+-    "key": "ctrl+up",
+-    "command": "workbench.action.chat.focusInput",
+-    "when": "inChat && quickChatHasFocus && !inChatInput"
+-  },
+-  {
+-    "key": "ctrl+up",
+-    "command": "workbench.action.terminal.focusAccessibleBuffer",
+-    "when": "accessibilityModeEnabled && terminalFocus && terminalHasBeenCreated || accessibilityModeEnabled && terminalFocus && terminalProcessSupported"
+-  },
+-  {
+-    "key": "ctrl+up",
+-    "command": "workbench.action.terminal.scrollToPreviousCommand",
+-    "when": "terminalFocus && terminalHasBeenCreated && !accessibilityModeEnabled || terminalFocus && terminalProcessSupported && !accessibilityModeEnabled"
+-  },
+-  {
+-    "key": "ctrl+up",
+-    "command": "interactive.history.focus",
+-    "when": "isCompositeNotebook && !notebookEditorFocused && interactiveInputCursorAtBoundary != 'bottom' && interactiveInputCursorAtBoundary != 'none'"
+-  },
+-  {
+-    "key": "ctrl+up",
+-    "command": "selectPrevCodeAction",
+-    "when": "codeActionMenuVisible"
+   }
+ ]
+Key 'ctrl+v' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+v",
+      "command": "editor.action.clipboardPasteAction"
+    },
+    {
+      "key": "ctrl+v",
+      "command": "workbench.action.terminal.paste",
+      "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+      "key": "ctrl+v",
+      "command": "workbench.action.terminal.sendSequence",
+      "when": "terminalFocus && !accessibilityModeEnabled && terminalShellType == 'pwsh'",
+      "args": {
+        "text": "\u0016"
+      }
+    },
+    {
+      "key": "ctrl+v",
+      "command": "filesExplorer.paste",
+      "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus"
+    }
+  ]
+Bindings for 'ctrl+w' differ between Windows and MacOS:
+@@ -1,16 +1,6 @@
+
+ [
+   {
+     "key": "ctrl+w",
+-    "command": "workbench.action.closeActiveEditor"
+-  },
+-  {
+-    "key": "ctrl+w",
+-    "command": "workbench.action.closeGroup",
+-    "when": "activeEditorGroupEmpty && multipleEditorGroups"
+-  },
+-  {
+-    "key": "ctrl+w",
+-    "command": "workbench.action.terminal.killEditor",
+-    "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated || terminalEditorFocus && terminalFocus && terminalProcessSupported"
++    "command": "workbench.action.switchWindow"
+   }
+ ]
+Key 'ctrl+x' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+x",
+      "command": "editor.action.clipboardCutAction"
+    },
+    {
+      "key": "ctrl+x",
+      "command": "filesExplorer.cut",
+      "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    }
+  ]
+Key 'ctrl+y' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+y",
+      "command": "redo"
+    },
+    {
+      "key": "ctrl+y",
+      "command": "chatEditor.action.acceptHunk",
+      "when": "chatEdits.hasEditorModifications && editorFocus && !chatEdits.isRequestInProgress || chatEdits.hasEditorModifications && notebookCellListFocused && !chatEdits.isRequestInProgress"
+    }
+  ]
+Key 'ctrl+z' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "ctrl+z",
+      "command": "undo"
+    },
+    {
+      "key": "ctrl+z",
+      "command": "inlineChat.unstash",
+      "when": "inlineChatHasStashedSession && !editorReadonly"
+    }
+  ]
+Bindings for 'delete' differ between Windows and MacOS:
+@@ -6,53 +6,13 @@
+
+   },
+   {
+     "key": "delete",
+-    "command": "debug.removeBreakpoint",
+-    "when": "breakpointsFocused && !breakpointInputFocused"
+-  },
+-  {
+-    "key": "delete",
+-    "command": "debug.removeWatchExpression",
+-    "when": "watchExpressionsFocused && !expressionSelected"
+-  },
+-  {
+-    "key": "delete",
+-    "command": "keybindings.editor.removeKeybinding",
+-    "when": "inKeybindings && keybindingFocus && !inputFocus"
+-  },
+-  {
+-    "key": "delete",
+     "command": "noteMultiCursor.deleteRight",
+     "when": "config.notebook.multiCursor.enabled && isNotebookMultiSelect && activeEditor == 'workbench.editor.notebook' && notebookMultiSelectCursorState == '1' || config.notebook.multiCursor.enabled && isNotebookMultiSelect && activeEditor == 'workbench.editor.notebook' && notebookMultiSelectCursorState == '2'"
+   },
+   {
+     "key": "delete",
+-    "command": "notebook.cell.delete",
+-    "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
+-  },
+-  {
+-    "key": "delete",
+-    "command": "notification.clear",
+-    "when": "notificationFocus"
+-  },
+-  {
+-    "key": "delete",
+-    "command": "search.action.remove",
+-    "when": "fileMatchOrMatchFocus && searchViewletVisible"
+-  },
+-  {
+-    "key": "delete",
+-    "command": "workbench.action.chat.undoEdits",
+-    "when": "inChat && !textInputFocus"
+-  },
+-  {
+-    "key": "delete",
+     "command": "workbench.action.terminal.killActiveTab",
+     "when": "terminalHasBeenCreated && terminalTabsFocus || terminalIsOpen && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus"
+-  },
+-  {
+-    "key": "delete",
+-    "command": "deleteFile",
+-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceMoveableToTrash && !inputFocus"
+   },
+   {
+     "key": "delete",
+Bindings for 'enter' differ between Windows and MacOS:
+@@ -141,13 +141,33 @@
+
+   },
+   {
+     "key": "enter",
++    "command": "workbench.action.terminal.renameActiveTab",
++    "when": "terminalHasBeenCreated && terminalTabsFocus && terminalTabsSingularSelection || terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection"
++  },
++  {
++    "key": "enter",
+     "command": "workbench.action.terminal.acceptSelectedSuggestionEnter",
+     "when": "terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible && config.terminal.integrated.suggest.runOnEnter != 'ignore' || terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible && config.terminal.integrated.suggest.runOnEnter != 'ignore'"
+   },
+   {
+     "key": "enter",
+-    "command": "explorer.openAndPassFocus",
+-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsFolder && !inputFocus"
++    "command": "debug.renameWatchExpression",
++    "when": "watchExpressionsFocused"
++  },
++  {
++    "key": "enter",
++    "command": "debug.setVariable",
++    "when": "variablesFocused"
++  },
++  {
++    "key": "enter",
++    "command": "remote.tunnel.label",
++    "when": "tunnelViewFocus && tunnelType == 'Forwarded' && tunnelViewMultiSelection == 'undefined'"
++  },
++  {
++    "key": "enter",
++    "command": "renameFile",
++    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+   },
+   {
+     "key": "enter",
+Bindings for 'f11' differ between Windows and MacOS:
+@@ -1,9 +1,4 @@
+
+ [
+-  {
+-    "key": "f11",
+-    "command": "workbench.action.toggleFullScreen",
+-    "when": "!isIOS"
+-  },
+   {
+     "key": "f11",
+     "command": "workbench.action.debug.stepInto",
+Bindings for 'f2' differ between Windows and MacOS:
+@@ -3,30 +3,5 @@
+
+     "key": "f2",
+     "command": "editor.action.rename",
+     "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+-  },
+-  {
+-    "key": "f2",
+-    "command": "workbench.action.terminal.renameActiveTab",
+-    "when": "terminalHasBeenCreated && terminalTabsFocus && terminalTabsSingularSelection || terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection"
+-  },
+-  {
+-    "key": "f2",
+-    "command": "debug.renameWatchExpression",
+-    "when": "watchExpressionsFocused"
+-  },
+-  {
+-    "key": "f2",
+-    "command": "debug.setVariable",
+-    "when": "variablesFocused"
+-  },
+-  {
+-    "key": "f2",
+-    "command": "remote.tunnel.label",
+-    "when": "tunnelViewFocus && tunnelType == 'Forwarded' && tunnelViewMultiSelection == 'undefined'"
+-  },
+-  {
+-    "key": "f2",
+-    "command": "renameFile",
+-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+   }
+ ]
+Key 'insert' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "insert",
+      "command": "editor.action.toggleOvertypeInsertMode"
+    }
+  ]
+Bindings for 'pagedown' differ between Windows and MacOS:
+@@ -41,6 +41,11 @@
+
+   },
+   {
+     "key": "pagedown",
++    "command": "workbench.action.terminal.scrollDownPage",
++    "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
++  },
++  {
++    "key": "pagedown",
+     "command": "workbench.action.terminal.selectNextPageSuggestion",
+     "when": "terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible || terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible"
+   }
+Bindings for 'pageup' differ between Windows and MacOS:
+@@ -41,6 +41,11 @@
+
+   },
+   {
+     "key": "pageup",
++    "command": "workbench.action.terminal.scrollUpPage",
++    "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
++  },
++  {
++    "key": "pageup",
+     "command": "workbench.action.terminal.selectPrevPageSuggestion",
+     "when": "terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible || terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible"
+   }
+Key 'shift+alt+.' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "shift+alt+.",
+      "command": "editor.action.autoFix",
+      "when": "textInputFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)quickfix\\b/"
+    }
+  ]
+Key 'shift+alt+0' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "shift+alt+0",
+      "command": "workbench.action.toggleEditorGroupLayout"
+    }
+  ]
+Key 'shift+alt+1' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "shift+alt+1",
+      "command": "workbench.action.moveEditorToFirstGroup"
+    }
+  ]
+Key 'shift+alt+9' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "shift+alt+9",
+      "command": "workbench.action.moveEditorToLastGroup"
+    }
+  ]
+Key 'shift+alt+a' is not bound on Linux; on Windows, it is:
+  [
+    {
+      "key": "shift+alt+a",
+      "command": "editor.action.blockComment",
+      "when": "editorTextFocus && !editorReadonly"
+    }
+  ]
+Key 'shift+alt+c' is not bound on Linux; on Windows, it is:
+  [
+    {
+      "key": "shift+alt+c",
+      "command": "copyFilePath",
+      "when": "!editorFocus"
+    },
+    {
+      "key": "shift+alt+c",
+      "command": "copyFilePath",
+      "when": "editorFocus"
+    },
+    {
+      "key": "shift+alt+c",
+      "command": "search.action.copyPath",
+      "when": "fileMatchOrFolderMatchWithResourceFocus"
+    }
+  ]
+Bindings for 'shift+alt+down' differ between Windows and Linux:
+@@ -1,8 +1,8 @@
+
+ [
+   {
+     "key": "shift+alt+down",
+-    "command": "editor.action.copyLinesDownAction",
+-    "when": "editorTextFocus && !editorReadonly"
++    "command": "editor.action.insertCursorBelow",
++    "when": "editorTextFocus"
+   },
+   {
+     "key": "shift+alt+down",
+Bindings for 'shift+alt+f' differ between Windows and Linux:
+@@ -1,19 +1,4 @@
+
+ [
+-  {
+-    "key": "shift+alt+f",
+-    "command": "editor.action.formatDocument",
+-    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+-  },
+-  {
+-    "key": "shift+alt+f",
+-    "command": "editor.action.formatDocument.none",
+-    "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
+-  },
+-  {
+-    "key": "shift+alt+f",
+-    "command": "notebook.formatCell",
+-    "when": "editorHasDocumentFormattingProvider && editorTextFocus && inCompositeEditor && notebookEditable && !editorReadonly && activeEditor == 'workbench.editor.notebook'"
+-  },
+   {
+     "key": "shift+alt+f",
+     "command": "filesExplorer.findInFolder",
+@@ -21,11 +6,6 @@
+
+   },
+   {
+     "key": "shift+alt+f",
+-    "command": "notebook.format",
+-    "when": "notebookEditable && !editorTextFocus && activeEditor == 'workbench.editor.notebook'"
+-  },
+-  {
+-    "key": "shift+alt+f",
+     "command": "search.action.restrictSearchToFolder",
+     "when": "folderMatchWithResourceFocus && searchViewletVisible"
+   }
+Bindings for 'shift+alt+f1' differ between Windows and Linux:
+@@ -1,6 +1,7 @@
+
+ [
+   {
+     "key": "shift+alt+f1",
+-    "command": "editor.action.toggleScreenReaderAccessibilityMode"
++    "command": "editor.action.accessibilityHelp",
++    "when": "!accessibilityHelpIsShown"
+   }
+ ]
+Bindings for 'shift+alt+left' differ between Windows and MacOS:
+@@ -1,7 +1,7 @@
+
+ [
+   {
+     "key": "shift+alt+left",
+-    "command": "editor.action.smartSelect.shrink",
+-    "when": "editorTextFocus"
++    "command": "cursorWordLeftSelect",
++    "when": "textInputFocus"
+   }
+ ]
+Key 'shift+alt+r' is not bound on Linux; on Windows, it is:
+  [
+    {
+      "key": "shift+alt+r",
+      "command": "revealFileInOS",
+      "when": "!editorFocus"
+    }
+  ]
+Bindings for 'shift+alt+right' differ between Windows and MacOS:
+@@ -1,7 +1,7 @@
+
+ [
+   {
+     "key": "shift+alt+right",
+-    "command": "editor.action.smartSelect.expand",
+-    "when": "editorTextFocus"
++    "command": "cursorWordEndRightSelect",
++    "when": "textInputFocus"
+   }
+ ]
+Bindings for 'shift+alt+up' differ between Windows and Linux:
+@@ -1,8 +1,8 @@
+
+ [
+   {
+     "key": "shift+alt+up",
+-    "command": "editor.action.copyLinesUpAction",
+-    "when": "editorTextFocus && !editorReadonly"
++    "command": "editor.action.insertCursorAbove",
++    "when": "editorTextFocus"
+   },
+   {
+     "key": "shift+alt+up",
+Key 'shift+alt+win+j' is not bound on Linux; on Windows, it is:
+  [
+    {
+      "key": "shift+alt+win+j",
+      "command": "notebook.cell.joinAbove",
+      "when": "notebookEditorFocused"
+    }
+  ]
+Key 'shift+delete' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "shift+delete",
+      "command": "editor.action.clipboardCutAction"
+    },
+    {
+      "key": "shift+delete",
+      "command": "deleteFile",
+      "when": "filesExplorerFocus && foldersViewVisible && !inputFocus"
+    }
+  ]
+Bindings for 'shift+end' differ between Windows and Linux:
+@@ -6,5 +6,15 @@
+
+     "args": {
+       "sticky": false
+     }
++  },
++  {
++    "key": "shift+end",
++    "command": "workbench.action.terminal.scrollToBottom",
++    "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
++  },
++  {
++    "key": "shift+end",
++    "command": "workbench.action.terminal.scrollToBottomAccessibleView",
++    "when": "accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibleViewIsShown && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'"
+   }
+ ]
+Bindings for 'shift+home' differ between Windows and Linux:
+@@ -3,5 +3,15 @@
+
+     "key": "shift+home",
+     "command": "cursorHomeSelect",
+     "when": "textInputFocus"
++  },
++  {
++    "key": "shift+home",
++    "command": "workbench.action.terminal.scrollToTop",
++    "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
++  },
++  {
++    "key": "shift+home",
++    "command": "workbench.action.terminal.scrollToTopAccessibleView",
++    "when": "accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibleViewIsShown && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'"
+   }
+ ]
+Key 'shift+insert' is not bound on MacOS; on Windows, it is:
+  [
+    {
+      "key": "shift+insert",
+      "command": "editor.action.clipboardPasteAction"
+    }
+  ]
+Bindings for 'shift+pagedown' differ between Windows and MacOS:
+@@ -13,10 +13,5 @@
+
+     "key": "shift+pagedown",
+     "command": "notebook.cell.cursorPageDownSelect",
+     "when": "editorTextFocus && inputFocus && notebookEditorFocused && !notebookOutputFocused"
+-  },
+-  {
+-    "key": "shift+pagedown",
+-    "command": "workbench.action.terminal.scrollDownPage",
+-    "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
+   }
+ ]
+Bindings for 'shift+pageup' differ between Windows and MacOS:
+@@ -13,10 +13,5 @@
+
+     "key": "shift+pageup",
+     "command": "notebook.cell.cursorPageUpSelect",
+     "when": "editorTextFocus && inputFocus && notebookEditorFocused && !notebookOutputFocused"
+-  },
+-  {
+-    "key": "shift+pageup",
+-    "command": "workbench.action.terminal.scrollUpPage",
+-    "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
+   }
+ ]
+Of the 387 keys bound on Windows:
+  2 are ignored due to rules in this script:
+    ctrl+k ctrl+k
+    escape
+  21 are not bound on Linux:
+    alt+`
+    alt+backspace
+    alt+f12
+    alt+win+/
+    alt+win+j
+    ctrl+alt+win+/
+    ctrl+alt+win+n
+    ctrl+f4
+    ctrl+insert
+    ctrl+k ctrl+shift+c
+    ctrl+k ctrl+shift+s
+    ctrl+shift+alt+left
+    ctrl+shift+alt+pagedown
+    ctrl+shift+alt+pageup
+    ctrl+shift+alt+right
+    ctrl+shift+q
+    ctrl+shift+u
+    shift+alt+a
+    shift+alt+c
+    shift+alt+r
+    shift+alt+win+j
+  198 are not bound on MacOS:
+    alt+0
+    alt+1
+    alt+2
+    alt+3
+    alt+4
+    alt+5
+    alt+6
+    alt+7
+    alt+8
+    alt+9
+    alt+c
+    alt+f4
+    alt+l
+    alt+p
+    alt+r
+    alt+w
+    ctrl+,
+    ctrl+.
+    ctrl+; a
+    ctrl+; c
+    ctrl+; ctrl+a
+    ctrl+; ctrl+c
+    ctrl+; ctrl+e
+    ctrl+; ctrl+f
+    ctrl+; ctrl+i
+    ctrl+; ctrl+l
+    ctrl+; ctrl+m
+    ctrl+; ctrl+o
+    ctrl+; ctrl+r
+    ctrl+; ctrl+shift+a
+    ctrl+; ctrl+shift+c
+    ctrl+; ctrl+shift+f
+    ctrl+; ctrl+shift+i
+    ctrl+; ctrl+shift+l
+    ctrl+; ctrl+x
+    ctrl+; e
+    ctrl+; f
+    ctrl+; l
+    ctrl+=
+    ctrl+[
+    ctrl+\
+    ctrl+]
+    ctrl+alt+.
+    ctrl+alt+b
+    ctrl+alt+c
+    ctrl+alt+down
+    ctrl+alt+f
+    ctrl+alt+i
+    ctrl+alt+o
+    ctrl+alt+up
+    ctrl+alt+v
+    ctrl+c
+    ctrl+f11
+    ctrl+f12
+    ctrl+f2
+    ctrl+f3
+    ctrl+f9
+    ctrl+i
+    ctrl+k c
+    ctrl+k ctrl+,
+    ctrl+k ctrl+-
+    ctrl+k ctrl+.
+    ctrl+k ctrl+/
+    ctrl+k ctrl+0
+    ctrl+k ctrl+1
+    ctrl+k ctrl+2
+    ctrl+k ctrl+3
+    ctrl+k ctrl+4
+    ctrl+k ctrl+5
+    ctrl+k ctrl+6
+    ctrl+k ctrl+7
+    ctrl+k ctrl+8
+    ctrl+k ctrl+9
+    ctrl+k ctrl+=
+    ctrl+k ctrl+[
+    ctrl+k ctrl+\
+    ctrl+k ctrl+]
+    ctrl+k ctrl+a
+    ctrl+k ctrl+alt+c
+    ctrl+k ctrl+alt+down
+    ctrl+k ctrl+alt+s
+    ctrl+k ctrl+alt+up
+    ctrl+k ctrl+b
+    ctrl+k ctrl+c
+    ctrl+k ctrl+d
+    ctrl+k ctrl+down
+    ctrl+k ctrl+e
+    ctrl+k ctrl+f
+    ctrl+k ctrl+f12
+    ctrl+k ctrl+i
+    ctrl+k ctrl+j
+    ctrl+k ctrl+l
+    ctrl+k ctrl+left
+    ctrl+k ctrl+m
+    ctrl+k ctrl+n
+    ctrl+k ctrl+o
+    ctrl+k ctrl+p
+    ctrl+k ctrl+pagedown
+    ctrl+k ctrl+pageup
+    ctrl+k ctrl+q
+    ctrl+k ctrl+r
+    ctrl+k ctrl+right
+    ctrl+k ctrl+s
+    ctrl+k ctrl+shift+\
+    ctrl+k ctrl+shift+l
+    ctrl+k ctrl+shift+n
+    ctrl+k ctrl+shift+w
+    ctrl+k ctrl+t
+    ctrl+k ctrl+u
+    ctrl+k ctrl+up
+    ctrl+k ctrl+w
+    ctrl+k ctrl+x
+    ctrl+k d
+    ctrl+k down
+    ctrl+k e
+    ctrl+k enter
+    ctrl+k f
+    ctrl+k f12
+    ctrl+k f2
+    ctrl+k i
+    ctrl+k left
+    ctrl+k m
+    ctrl+k o
+    ctrl+k p
+    ctrl+k r
+    ctrl+k right
+    ctrl+k s
+    ctrl+k shift+enter
+    ctrl+k shift+o
+    ctrl+k t
+    ctrl+k u
+    ctrl+k up
+    ctrl+k v
+    ctrl+k w
+    ctrl+k y
+    ctrl+k z
+    ctrl+left
+    ctrl+m
+    ctrl+numpad0
+    ctrl+numpad_add
+    ctrl+numpad_subtract
+    ctrl+s
+    ctrl+shift+,
+    ctrl+shift+.
+    ctrl+shift+1
+    ctrl+shift+;
+    ctrl+shift+=
+    ctrl+shift+[
+    ctrl+shift+\
+    ctrl+shift+]
+    ctrl+shift+alt+down
+    ctrl+shift+alt+l
+    ctrl+shift+alt+up
+    ctrl+shift+b
+    ctrl+shift+backspace
+    ctrl+shift+c
+    ctrl+shift+d
+    ctrl+shift+down
+    ctrl+shift+end
+    ctrl+shift+enter
+    ctrl+shift+f
+    ctrl+shift+f12
+    ctrl+shift+f2
+    ctrl+shift+f3
+    ctrl+shift+f5
+    ctrl+shift+f9
+    ctrl+shift+h
+    ctrl+shift+home
+    ctrl+shift+i
+    ctrl+shift+j
+    ctrl+shift+k
+    ctrl+shift+l
+    ctrl+shift+n
+    ctrl+shift+o
+    ctrl+shift+p
+    ctrl+shift+pagedown
+    ctrl+shift+pageup
+    ctrl+shift+s
+    ctrl+shift+space
+    ctrl+shift+t
+    ctrl+shift+up
+    ctrl+shift+v
+    ctrl+shift+w
+    ctrl+shift+x
+    ctrl+shift+y
+    ctrl+shift+z
+    ctrl+u
+    ctrl+v
+    ctrl+x
+    ctrl+y
+    ctrl+z
+    insert
+    shift+alt+.
+    shift+alt+0
+    shift+alt+1
+    shift+alt+9
+    shift+delete
+    shift+insert
+  22 are bound differently on Linux:
+    alt+f2
+    alt+left
+    alt+right
+    ctrl+alt+enter
+    ctrl+alt+pagedown
+    ctrl+alt+pageup
+    ctrl+alt+r
+    ctrl+backspace
+    ctrl+end
+    ctrl+home
+    ctrl+q
+    ctrl+right
+    ctrl+shift+-
+    ctrl+shift+a
+    ctrl+shift+left
+    ctrl+shift+right
+    shift+alt+down
+    shift+alt+f
+    shift+alt+f1
+    shift+alt+up
+    shift+end
+    shift+home
+  59 are bound differently on MacOS:
+    alt+delete
+    alt+down
+    alt+enter
+    alt+k
+    alt+pagedown
+    alt+pageup
+    alt+up
+    ctrl+-
+    ctrl+/
+    ctrl+0
+    ctrl+1
+    ctrl+2
+    ctrl+3
+    ctrl+4
+    ctrl+5
+    ctrl+6
+    ctrl+7
+    ctrl+8
+    ctrl+9
+    ctrl+a
+    ctrl+alt+/
+    ctrl+alt+backspace
+    ctrl+alt+left
+    ctrl+alt+right
+    ctrl+b
+    ctrl+d
+    ctrl+delete
+    ctrl+down
+    ctrl+e
+    ctrl+enter
+    ctrl+f
+    ctrl+f5
+    ctrl+g
+    ctrl+h
+    ctrl+j
+    ctrl+l
+    ctrl+n
+    ctrl+o
+    ctrl+p
+    ctrl+pagedown
+    ctrl+pageup
+    ctrl+r
+    ctrl+shift+e
+    ctrl+shift+g
+    ctrl+shift+m
+    ctrl+shift+r
+    ctrl+t
+    ctrl+up
+    ctrl+w
+    delete
+    enter
+    f11
+    f2
+    pagedown
+    pageup
+    shift+alt+left
+    shift+alt+right
+    shift+pagedown
+    shift+pageup
+  85 are the same on all three platforms:
+    alt+-
+    alt+=
+    alt+[
+    alt+]
+    alt+a
+    alt+end
+    alt+end alt+end
+    alt+f1
+    alt+f10
+    alt+f3
+    alt+f5
+    alt+f6
+    alt+f8
+    alt+f9
+    alt+h
+    alt+home
+    alt+home alt+home
+    alt+space
+    alt+z
+    backspace
+    browserback
+    browserforward
+    ctrl+`
+    ctrl+alt+end
+    ctrl+alt+g
+    ctrl+alt+home
+    ctrl+alt+space
+    ctrl+shift+2
+    ctrl+shift+5
+    ctrl+shift+6
+    ctrl+shift+`
+    ctrl+shift+tab
+    ctrl+space
+    ctrl+tab
+    down
+    end
+    escape escape
+    f1
+    f10
+    f12
+    f3
+    f4
+    f5
+    f6
+    f7
+    f8
+    f9
+    home
+    left
+    m
+    right
+    shift+alt+d
+    shift+alt+enter
+    shift+alt+f10
+    shift+alt+f12
+    shift+alt+f3
+    shift+alt+f5
+    shift+alt+f7
+    shift+alt+f8
+    shift+alt+f9
+    shift+alt+h
+    shift+alt+i
+    shift+alt+o
+    shift+backspace
+    shift+down
+    shift+enter
+    shift+escape
+    shift+f10
+    shift+f11
+    shift+f12
+    shift+f3
+    shift+f4
+    shift+f5
+    shift+f6
+    shift+f7
+    shift+f8
+    shift+f9
+    shift+left
+    shift+right
+    shift+tab
+    shift+up
+    space
+    tab
+    up
+    y

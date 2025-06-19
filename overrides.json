@@ -1,29 +1,4 @@
-{
-  "name": "default-keys-windows",
-  "displayName": "Windows Default Keybindings",
-  "description": "Provide Windows default keybindings on any platform.",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/smcpeak/vscode-default-keys-windows"
-  },
-  "icon": "icon.png",
-  "license": "MIT",
-  "publisher": "smcpeak",
-  "version": "1.0.0",
-  "engines": {
-    "vscode": "^1.101.0"
-  },
-  "categories": [
-    "Keymaps"
-  ],
-  "keywords": [
-    "keymap"
-  ],
-  "scripts": {
-    "package": "vsce package"
-  },
-  "contributes": {
-    "keybindings": [
+    [
       {
         "key": "alt+0",
         "command": "workbench.action.lastEditorInGroup"
@@ -3396,5 +3371,3 @@
         "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
       }
     ]
-  }
-}

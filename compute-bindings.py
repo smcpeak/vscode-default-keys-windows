@@ -127,10 +127,10 @@ def read_bindings(fname: str) -> BindingDict:
   return grouped_bindings
 
 
-def print_indented_json(value: Any, indent_level: int) -> None:
-  """Print `value` as JSON with `indent_level` of indentation spaces
+def get_indented_json(value: Any, indent_level: int) -> str:
+  """Get `value` as JSON with `indent_level` of indentation spaces
   preceding all lines, and two spaces of indentation separating nested
-  levels."""
+  levels.  The final line does not have a trailing newline."""
 
   indent_prefix: str = " " * indent_level
   quoted: str = json.dumps(value, indent=2)
@@ -138,7 +138,7 @@ def print_indented_json(value: Any, indent_level: int) -> None:
     indent_prefix + line
     for line in quoted.splitlines()
   ]
-  print("\n".join(lines))
+  return "\n".join(lines)
 
 
 def read_platform_bindings(platform: str) -> BindingDict:
@@ -209,48 +209,78 @@ def main() -> None:
   linux_keys: BindingDict = read_platform_bindings("linux")
   print(f"Linux has {len(linux_keys)} bound keys.")
 
+  macos_keys: BindingDict = read_platform_bindings("macos")
+  print(f"MacOS has {len(macos_keys)} bound keys.")
+
   # Bindings that we need to include in the extension definition in
   # order to make the Windows bindings work on Linux.
   override_bindings: List[Binding] = []
 
   # List of keys with various dispositions.
   ignored = []
-  different = []
-  unique = []
+  missing_linux = []
+  missing_macos = []
+  different_linux = []
+  different_macos = []
   same = []
 
   # Iterate over all keys bound on Windows and compare that binding to
   # how it is bound (if at all) on Linux.
-  for key, windows_bindings in windows_keys.items():
+  for key in sorted(windows_keys):
+    windows_bindings = windows_keys[key]
+
     # Ignore certain keys.
     if should_ignore_key(key):
       ignored.append(key)
 
-    elif key in linux_keys:
+    elif key not in linux_keys:
+      print(f"Key {key!r} is not bound on Linux; on Windows, it is:")
+      print(get_indented_json(windows_bindings, 2))
+
+      override_bindings += windows_bindings
+      missing_linux.append(key)
+
+    elif key not in macos_keys:
+      print(f"Key {key!r} is not bound on MacOS; on Windows, it is:")
+      print(get_indented_json(windows_bindings, 2))
+
+      override_bindings += windows_bindings
+      missing_macos.append(key)
+
+    else:
       linux_bindings = linux_keys[key]
+      macos_bindings = macos_keys[key]
+
       if windows_bindings != linux_bindings:
-        print(f"Bindings for {key!r} differ:")
+        print(f"Bindings for {key!r} differ between Windows and Linux:")
         print_differences(windows_bindings, linux_bindings)
 
         override_bindings += windows_bindings
-        different.append(key)
+        different_linux.append(key)
+
+      elif windows_bindings != macos_bindings:
+        print(f"Bindings for {key!r} differ between Windows and MacOS:")
+        print_differences(windows_bindings, macos_bindings)
+
+        override_bindings += windows_bindings
+        different_macos.append(key)
 
       else:
         same.append(key)
 
-    else:
-      print(f"Key {key!r} is bound on Windows only, to:")
-      print_indented_json(windows_bindings, 2)
-
-      override_bindings += windows_bindings
-      unique.append(key)
-
   # Summarize the comparison results.
   print(f"Of the {len(windows_keys)} keys bound on Windows:")
   print_key_list(ignored, "are ignored due to rules in this script")
-  print_key_list(different, "are bound differently on Linux")
-  print_key_list(unique, "are bound only on Windows")
-  print(f"  {len(same)} are the same on both platforms")
+  print_key_list(missing_linux, "are not bound on Linux")
+  print_key_list(missing_macos, "are not bound on MacOS")
+  print_key_list(different_linux, "are bound differently on Linux")
+  print_key_list(different_macos, "are bound differently on MacOS")
+  print_key_list(same, "are the same on all three platforms")
+
+  # Print the override bindings to a file.  That has to then be
+  # manually copied+pasted into package.json.
+  with open("overrides.json", "w") as f:
+    f.write(get_indented_json(override_bindings, 4) + "\n")
 
 
 call_main()
